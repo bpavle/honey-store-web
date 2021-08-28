@@ -11,11 +11,12 @@ function App() {
   return (<div className="App">
     <Header />
     <Menu />
-    <Route exact path="/home" component={Products} />
-    <Route exact path="/about-us" component={About} />
-    <Route exact path="/orders" component={Orders} />
-    <Route exact path="/my-profile" component={MyProfile} />
-
+    <div style={{ textAlign: 'center' }}>
+      <Route exact path="/home" component={Products} />
+      <Route exact path="/about-us" component={About} />
+      <Route exact path="/orders" component={Orders} />
+      <Route exact path="/my-profile" component={MyProfile} />
+    </div>
   </div>
   );
 }
