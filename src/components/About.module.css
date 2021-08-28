@@ -1,0 +1,9 @@
+.About {
+  width: 70%;
+  height: 70%;
+  background-color: bisque;
+  text-align: justify;
+  margin: 2% 12%;
+  padding: 2%;
+  border-radius: 10px;
+}
