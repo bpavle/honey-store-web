@@ -1,0 +1,17 @@
+.MyProfile {
+  height: 70%;
+  width: 22%;
+  background-color: bisque;
+  text-align: justify;
+  margin: 2% 35%;
+  padding: 2%;
+  border-radius: 10px;
+}
+table {
+  padding: 2%;
+  border-spacing: 10px;
+}
+
+button {
+  width: 100%;
+}
