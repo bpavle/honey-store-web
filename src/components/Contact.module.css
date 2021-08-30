@@ -1,0 +1,21 @@
+.Contact {
+  width: 70%;
+  height: 70%;
+  background-color: rgba(255, 228, 196, 0.521);
+  text-align: justify;
+  margin: 2% 12%;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.left {
+  display: inline-block;
+  width: 30%;
+}
+.right {
+  display: inline-block;
+  margin-left: 5%;
+  width: 60%;
+  height: 100px;
+  background-color: rgb(255, 0, 0);
+}

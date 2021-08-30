@@ -8,6 +8,7 @@ import About from './components/About';
 import MyProfile from './components/MyProfile';
 import Orders from './components/Orders';
 import Employees from './components/Employees';
+import Contact from './components/Contact';
 function App() {
   return (<div className="App">
     <Header />
@@ -18,6 +19,8 @@ function App() {
       <Route exact path="/orders" component={Orders} />
       <Route exact path="/my-profile" component={MyProfile} />
       <Route exact path="/employees" component={Employees} />
+      <Route exact path="/contact" component={Contact} />
+
     </div>
   </div>
   );

@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Menu.module.css";
-const menuItems = ["Home", "About-us", "Orders", "My-profile", "Employees"];
+const menuItems = [
+  "Home",
+  "About-us",
+  "Orders",
+  "My-profile",
+  "Employees",
+  "Contact",
+];
 const Menu = (props) => {
   return (
     <div className={styles.Menu}>
