@@ -7,6 +7,7 @@ import Products from './components/Products'
 import About from './components/About';
 import MyProfile from './components/MyProfile';
 import Orders from './components/Orders';
+import Employees from './components/Employees';
 function App() {
   return (<div className="App">
     <Header />
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/about-us" component={About} />
       <Route exact path="/orders" component={Orders} />
       <Route exact path="/my-profile" component={MyProfile} />
+      <Route exact path="/employees" component={Employees} />
     </div>
   </div>
   );
