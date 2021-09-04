@@ -10,19 +10,19 @@ import Orders from './components/Orders';
 import Employees from './components/Employees';
 import Contact from './components/Contact';
 function App() {
-  return (<div className="App">
-    <Header />
-    <Menu />
-    <div style={{ textAlign: 'center' }}>
-      <Route exact path="/home" component={Products} />
-      <Route exact path="/about-us" component={About} />
-      <Route exact path="/orders" component={Orders} />
-      <Route exact path="/my-profile" component={MyProfile} />
-      <Route exact path="/employees" component={Employees} />
-      <Route exact path="/contact" component={Contact} />
-
+  return (
+    <div className="App">
+      <Header />
+      <Menu />
+      <div style={{ textAlign: 'center' }}>
+        <Route exact path="/home" component={Products} />
+        <Route exact path="/about-us" component={About} />
+        <Route exact path="/orders" component={Orders} />
+        <Route exact path="/my-profile" component={MyProfile} />
+        <Route exact path="/employees" component={Employees} />
+        <Route exact path="/contact" component={Contact} />
+      </div>
     </div>
-  </div>
   );
 }
 
