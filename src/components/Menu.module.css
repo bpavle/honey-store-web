@@ -1,7 +1,7 @@
 .Menu {
   background-color: rgba(0, 0, 0, 0.753);
   color: rgb(255, 255, 255);
-  height: 5%;
+  height: 5vh;
   display: block;
 }
 .menuButton {
