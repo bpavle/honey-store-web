@@ -10,6 +10,7 @@ import Orders from './components/Orders';
 import Employees from './components/Employees';
 import Contact from './components/Contact';
 import Login from './components/Login';
+import Registration from './components/Registration';
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/employees" component={Employees} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/Login" component={Login} />
+        <Route exact path="/Registration" component={Registration} />
         <Route exact path="/" component={Products} />
         {/* <Route default component={Products} /> */}
       </div>

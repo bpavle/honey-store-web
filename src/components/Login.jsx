@@ -24,7 +24,7 @@ const Login = () => {
           <tr>
             <td colspan="2" style={{ textAlign: "center" }}>
               {" "}
-              No account? <a href="#">Register here</a>
+              No account? <a href="Registration">Register here</a>
             </td>
           </tr>
           <tr>
