@@ -26,3 +26,8 @@ textarea {
   width: 60%;
   height: 100px;
 }
+table,
+td,
+tr {
+  border-style: none;
+}
