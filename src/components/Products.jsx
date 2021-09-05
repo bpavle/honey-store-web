@@ -8,6 +8,9 @@ const Products = () => {
     setProducts(getProducts());
     // console.log("Products" + JSON.stringify(products));
   });
+  const onClickHandler = () => {
+    console.log("Clear all products click prop");
+  };
   let table_data = products.map(function (product) {
     return (
       <td>
