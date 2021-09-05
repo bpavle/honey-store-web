@@ -9,6 +9,7 @@ import MyProfile from './components/MyProfile';
 import Orders from './components/Orders';
 import Employees from './components/Employees';
 import Contact from './components/Contact';
+import Login from './components/Login';
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/my-profile" component={MyProfile} />
         <Route exact path="/employees" component={Employees} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/Login" component={Login} />
         <Route exact path="/" component={Products} />
         {/* <Route default component={Products} /> */}
       </div>
