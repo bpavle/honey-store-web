@@ -6,6 +6,7 @@ const ProductDetails = ({ label, image, price, info }) => {
   const onClickHandler = (e) => {
     e.stopPropagation();
   };
+  let [total, setTotal] = useState(amount * price);
   return (
     <div className={styles.container} onClick={onClickHandler}>
       <div className={styles.left}>
@@ -16,24 +17,29 @@ const ProductDetails = ({ label, image, price, info }) => {
           <h3>{label}</h3>
 
           <tr>
-            <td>
+            <td colspan="4">
               <p>{info}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <bold>{price} din</bold>
+              <b>{price} din</b>
             </td>
           </tr>
           <tr>
-            Amount
-            <input
-              type="number"
-              style={{ width: "30px", fontSize: 18 }}
-              defaultValue={amount}
-            />
+            <td>Amount</td>
+            <td>
+              <input
+                type="number"
+                style={{ width: "30px", fontSize: 18 }}
+                defaultValue={amount}
+              />
+            </td>
+            <td>= {total}</td>
+            <td>
+              <button className={styles.button}>Add to basket</button>
+            </td>
           </tr>
-          <button>Add to basket</button>
         </table>
       </div>
     </div>
