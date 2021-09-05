@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Products.module.css";
 import Product from "./Product";
-import tegla from "./../images/tegla.png";
 import { getProducts } from "./../api/getProducts.js";
 const Products = () => {
   let [products, setProducts] = useState([]);
@@ -12,7 +11,7 @@ const Products = () => {
   let table_data = products.map(function (product) {
     return (
       <td>
-        <Product label={product.label} image={product.image} />
+        <Product label={product.label} image={product.image} id={product.id} />
       </td>
     );
   });
@@ -30,7 +29,7 @@ const Products = () => {
     }
     return <table>{rows}</table>;
   };
-  const table = createTable(table_data, 3);
+  const table = createTable(table_data, 6);
   return <div className={styles.container}>{table}</div>;
 };
 export default Products;
