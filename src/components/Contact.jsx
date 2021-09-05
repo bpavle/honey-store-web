@@ -5,19 +5,42 @@ const Contact = () => {
   return (
     <div className={styles.Contact}>
       <div className={styles.left}>
-        <h2>Pisite nam</h2>
         <form>
-          <label for="email">Your email</label>
-          <br></br>
-          <input type="text" placeholder="email" id="email"></input>
-          <br></br>
-          <label for="textarea">Content</label>
-          <br></br>
-          <textarea id="textarea" type="text"></textarea>
-          <button>Posalji</button>
+          <table>
+            <h2>Pisite nam</h2>
+            <tr>
+              <td>
+                <label for="email">Your email</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" placeholder="email" id="email"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="textarea">Content</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <textarea id="textarea" type="text"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button>Posalji</button>
+              </td>
+            </tr>
+          </table>
         </form>
       </div>
       <div className={styles.right}>
+        <p>
+          Контакт Пере Велимировића 8 <br />E пошта: medenjaci@gmail.com <br />
+          тел: 0641234568
+        </p>
         <div
           class="mapouter"
           style={{
