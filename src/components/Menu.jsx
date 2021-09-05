@@ -9,6 +9,7 @@ const menuItems = [
   "My-profile",
   "Employees",
   "Contact",
+  "Login",
 ];
 const Menu = (props) => {
   return (
