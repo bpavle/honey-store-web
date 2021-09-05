@@ -4,14 +4,26 @@ import Product from "./Product";
 import { getProducts } from "./../api/getProducts.js";
 const Products = () => {
   let [products, setProducts] = useState([]);
+  let [clicked, setClicked] = useState(false);
   useEffect(() => {
     setProducts(getProducts());
     // console.log("Products" + JSON.stringify(products));
   });
+  const onClickHandler = () => {
+    console.log("Outside click");
+    setClicked(true);
+  };
   let table_data = products.map(function (product) {
     return (
       <td>
-        <Product label={product.label} image={product.image} id={product.id} />
+        <Product
+          label={product.label}
+          image={product.image}
+          id={product.id}
+          price={product.price}
+          info={product.info}
+          clicked={false}
+        />
       </td>
     );
   });
@@ -30,6 +42,10 @@ const Products = () => {
     return <table>{rows}</table>;
   };
   const table = createTable(table_data, 6);
-  return <div className={styles.container}>{table}</div>;
+  return (
+    <div className={styles.container} onClick={onClickHandler}>
+      {table}
+    </div>
+  );
 };
 export default Products;
