@@ -24,8 +24,8 @@ function App() {
         <Route exact path="/my-profile" component={MyProfile} />
         <Route exact path="/employees" component={Employees} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/Login" component={Login} />
-        <Route exact path="/Registration" component={Registration} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/registration" component={Registration} />
         <Route exact path="/" component={Products} />
         {/* <Route default component={Products} /> */}
       </div>
