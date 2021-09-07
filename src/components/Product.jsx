@@ -14,35 +14,24 @@ const Product = (props) => {
   Product.onClickOutside = () => {
     setIsClicked(false);
   };
-  if (isClicked) {
-    return (
-      <>
+
+  return (
+    <>
+      {isClicked && (
         <div className={styles.clear} onClick={clear}>
           <ProductDetails {...props}></ProductDetails>
         </div>
-        <div className={styles.container} onClick={onClickHandler}>
-          <img src={props.image} alt="picture placeholder" />
-          <div className={styles.label}>{props.label}</div>
-          <div className={styles.price}>
-            <b>
-              {props.price} {props.currency}
-            </b>
-          </div>
+      )}
+      <div className={styles.container} onClick={onClickHandler}>
+        <img src={props.image} alt="picture placeholder" />
+        <div className={styles.label}>{props.label}</div>
+        <div className={styles.price}>
+          <b>
+            {props.price} {props.currency}
+          </b>
         </div>
-      </>
-    );
-  }
-
-  return (
-    <div className={styles.container} onClick={onClickHandler}>
-      <img src={props.image} alt="picture placeholder" />
-      <div className={styles.label}>{props.label}</div>
-      <div className={styles.price}>
-        <b>
-          {props.price} {props.currency}
-        </b>
       </div>
-    </div>
+    </>
   );
 };
 // const clickOutsideConfig = {
