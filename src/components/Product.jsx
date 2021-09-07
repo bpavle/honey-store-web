@@ -11,10 +11,6 @@ const Product = (props) => {
   const clear = () => {
     setIsClicked(false);
   };
-  Product.onClickOutside = () => {
-    setIsClicked(false);
-  };
-
   return (
     <>
       {isClicked && (
