@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Products.module.css";
 import Product from "./Product";
 import { getProducts } from "./../api/getProducts.js";
+import AddProduct from "./AddProduct";
 const Products = () => {
   let [products, setProducts] = useState([]);
   let [clicked, setClicked] = useState(false);
@@ -46,6 +47,7 @@ const Products = () => {
   return (
     <div className={styles.container} onClick={onClickHandler}>
       {table}
+      <AddProduct></AddProduct>
     </div>
   );
 };
