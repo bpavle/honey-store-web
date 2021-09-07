@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styles from "./ProductDetails.module.css";
 const ProductDetails = ({ label, image, price, info }) => {
   let [amount, setAmount] = useState(1);
+  let [total, setTotal] = useState(amount * price);
   const onClickHandler = (e) => {
     e.stopPropagation();
   };
-  let [total, setTotal] = useState(amount * price);
+  const onChangeHandler = (e) => {
+    console.log(e);
+    setAmount(e.target.value);
+  };
+  useEffect(() => {
+    setTotal(amount * price);
+  });
+
   return (
     <div className={styles.container} onClick={onClickHandler}>
       <div className={styles.left}>
@@ -33,6 +41,7 @@ const ProductDetails = ({ label, image, price, info }) => {
                 type="number"
                 style={{ width: "30px", fontSize: 18 }}
                 defaultValue={amount}
+                onChange={onChangeHandler}
               />
             </td>
             <td>= {total}</td>
