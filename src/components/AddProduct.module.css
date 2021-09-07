@@ -1,0 +1,13 @@
+.button {
+  background-color: rgb(231, 208, 0);
+  border-radius: 50%;
+  font-size: 3em;
+  font-weight: bold;
+  width: 2em;
+  height: 2em;
+  padding: 0.01em 0.01em 0.01em 0.01em;
+  float: right;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
