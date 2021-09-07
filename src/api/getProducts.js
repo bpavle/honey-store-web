@@ -6,14 +6,16 @@ const products = [{
     image: tegla,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 },
 {
     id: 2,
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -21,7 +23,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -29,7 +32,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -37,7 +41,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -45,7 +50,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -53,7 +59,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -61,7 +68,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -69,7 +77,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -77,7 +86,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -85,7 +95,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -93,7 +104,8 @@ const products = [{
     image: medenjaci,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-    price: 100
+    price: 100,
+    currency: "din"
 }
     ,
 {
@@ -102,6 +114,7 @@ const products = [{
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
     price: 100,
+    currency: "din",
 
 }
 

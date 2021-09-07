@@ -23,6 +23,7 @@ const Products = () => {
           price={product.price}
           info={product.info}
           clicked={false}
+          currency={product.currency}
         />
       </td>
     );
