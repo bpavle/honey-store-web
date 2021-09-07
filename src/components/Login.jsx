@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Login.module.css";
+import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className={styles.Login}>
@@ -24,7 +25,7 @@ const Login = () => {
           <tr>
             <td colspan="2" style={{ textAlign: "center" }}>
               {" "}
-              No account? <a href="Registration">Register here</a>
+              No account? <Link to="Registration">Register here</Link>
             </td>
           </tr>
           <tr>
