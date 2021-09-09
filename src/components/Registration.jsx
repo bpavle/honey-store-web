@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Registration.module.css";
+import Button from "./Common/Button";
 const Registration = () => {
   return (
     <div className={styles.Registration}>
@@ -55,7 +56,7 @@ const Registration = () => {
         </tr>
         <tr>
           <td colspan="2">
-            <button>Register</button>
+            <Button>Register</Button>
           </td>
         </tr>
       </table>

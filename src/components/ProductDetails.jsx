@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import styles from "./ProductDetails.module.css";
+import Button from "./Common/Button";
 const ProductDetails = ({ label, image, price, info }) => {
   let [amount, setAmount] = useState(1);
   let [total, setTotal] = useState(amount * price);
@@ -46,7 +47,7 @@ const ProductDetails = ({ label, image, price, info }) => {
             </td>
             <td>= {total}</td>
             <td>
-              <button className={styles.button}>Add to basket</button>
+              <Button>Add to basket</Button>
             </td>
           </tr>
         </table>

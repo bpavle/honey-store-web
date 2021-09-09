@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./AddProduct.module.css";
+import Button from "./Common/Button";
 const AddProduct = () => {
   const onClickHandler = (e) => {
     e.stopPropagation();
@@ -39,7 +40,8 @@ const AddProduct = () => {
             </tr>
             <tr>
               <td colspan="2">
-                <button type="submit">Create new product</button>
+                <Button type="submit">Create new product</Button>
+                {/* <button type="submit">Create new product</button> */}
               </td>
             </tr>
           </table>

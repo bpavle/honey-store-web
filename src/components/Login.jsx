@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
+import Button from "./Common/Button";
 const Login = () => {
   return (
     <div className={styles.Login}>
@@ -30,7 +31,7 @@ const Login = () => {
           </tr>
           <tr>
             <td colspan="2">
-              <button type="submit">Login</button>
+              <Button type="submit">Login</Button>
             </td>
           </tr>
         </table>

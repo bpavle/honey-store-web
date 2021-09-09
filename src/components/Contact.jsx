@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Contact.module.css";
+import Button from "./Common/Button";
 const mapStyle = {};
 const Contact = () => {
   return (
@@ -30,7 +31,7 @@ const Contact = () => {
             </tr>
             <tr>
               <td>
-                <button>Posalji</button>
+                <Button>Posalji</Button>
               </td>
             </tr>
           </table>
@@ -56,6 +57,7 @@ const Contact = () => {
               overflow: "hidden",
               background: "none!important",
               height: "100%",
+
               width: "100%",
             }}
           >

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./MyProfile.module.css";
+import Button from "./Common/Button";
 const MyProfile = () => {
   return (
     <div className={styles.MyProfile}>
@@ -55,7 +56,7 @@ const MyProfile = () => {
         </tr>
         <tr>
           <td colspan="2">
-            <button>Sacuvaj</button>
+            <Button>Sacuvaj</Button>
           </td>
         </tr>
       </table>

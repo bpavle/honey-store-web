@@ -11,18 +11,3 @@ table {
   padding: 2%;
   border-spacing: 10px;
 }
-
-button {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.753); /* Green */
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-button:hover {
-  background-color: rgba(31, 31, 31, 0.753);
-  cursor: pointer;
-}
