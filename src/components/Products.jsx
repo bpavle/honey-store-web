@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import styles from "./Products.module.css";
 import Product from "./Product";
 import { getProducts } from "./../api/getProducts.js";
-import AddProduct from "./AddProduct";
+import AddProductBtn from "./AddProductBtn";
 const Products = () => {
   let [products, setProducts] = useState([]);
   let [clicked, setClicked] = useState(false);
   useEffect(() => {
     setProducts(getProducts());
-    // console.log("Products" + JSON.stringify(products));
   });
   const onClickHandler = () => {
     console.log("Outside click");
@@ -47,7 +46,7 @@ const Products = () => {
   return (
     <div className={styles.container} onClick={onClickHandler}>
       {table}
-      <AddProduct></AddProduct>
+      <AddProductBtn></AddProductBtn>
     </div>
   );
 };

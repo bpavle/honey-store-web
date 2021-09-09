@@ -2,6 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Menu.module.css";
+//TODO: Move menuItems to separate file as object
+//example:
+// export const routes = {
+// home: {
+// route: '/',
+// label: "Home"
+// }
+// login: {
+// route: 'login',
+// label: "Login"
+// }
+// }
 const menuItems = [
   "Home",
   "About-us",

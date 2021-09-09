@@ -30,7 +30,4 @@ const Product = (props) => {
     </>
   );
 };
-// const clickOutsideConfig = {
-//   handleClickOutside: () => Product.handleClickOutside,
-// };
 export default Product;
