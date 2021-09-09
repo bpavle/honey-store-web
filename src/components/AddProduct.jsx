@@ -1,14 +1,51 @@
 import React from "react";
 import styles from "./AddProduct.module.css";
 const AddProduct = () => {
-  const onClickHandler = () => {
-    //show form
-    console.log("Clicked on AddProduct");
+  const onClickHandler = (e) => {
+    e.stopPropagation();
   };
   return (
-    <button className={styles.button} onClick={onClickHandler}>
-      +
-    </button>
+    <div className={styles.container} onClick={onClickHandler}>
+      <form action="">
+        <div className={styles.left}>
+          <div className={styles.image}></div>
+          <input type="file" id="img" name="img" accept="image/*" />
+        </div>
+        <div className={styles.right}>
+          <table>
+            <tr>
+              <td>
+                <label for="name">Name</label>
+              </td>
+              <td>
+                <input type="text" id="name" name="name"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="description">Description</label>
+              </td>
+              <td>
+                <input type="text" id="description"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="price">Price</label>
+              </td>
+              <td>
+                <input type="text" id="price"></input>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button type="submit">Create new product</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
   );
 };
 
