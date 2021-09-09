@@ -1,5 +1,4 @@
 .Registration {
-  height: 70%;
   width: 22%;
   background-color: rgba(255, 228, 196, 0.521);
   text-align: justify;
@@ -7,7 +6,6 @@
   padding: 2%;
   border-radius: 10px;
 }
-table {
-  padding: 2%;
-  border-spacing: 10px;
+.table {
+  width: 100%;
 }

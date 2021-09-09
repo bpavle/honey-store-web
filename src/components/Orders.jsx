@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Orders.module.css";
+import styled from "styled-components";
 const Orders = () => {
   return (
     <div className={styles.Orders}>
-      <table>
+      <table className={styles.table}>
         <tr>
           <th>ID porudzbine</th>
           <th>Ime</th>

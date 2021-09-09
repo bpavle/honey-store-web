@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div className={styles.Login}>
       <form action="">
-        <table>
+        <table className={styles.table}>
           <tr>
             <td>
               <label htmlFor="username">Username</label>

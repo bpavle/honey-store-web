@@ -4,7 +4,7 @@ import Button from "./Common/Button";
 const MyProfile = () => {
   return (
     <div className={styles.MyProfile}>
-      <table>
+      <table className={styles.table}>
         <tr>
           <td>Ime</td>
           <td>

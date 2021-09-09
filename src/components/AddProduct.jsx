@@ -41,7 +41,6 @@ const AddProduct = () => {
             <tr>
               <td colspan="2">
                 <Button type="submit">Create new product</Button>
-                {/* <button type="submit">Create new product</button> */}
               </td>
             </tr>
           </table>

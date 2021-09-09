@@ -6,23 +6,19 @@
   margin: 2% 12%;
   padding: 2%;
   border-radius: 10px;
-  /* font-size: 20px; */
 }
-table,
-td,
-th {
-  border: 1px solid rgb(126, 126, 126);
-  text-align: left;
-}
-
-table {
-  border-collapse: collapse;
+.table {
+  border: 1px solid rgb(141, 141, 141);
+  border-spacing: 0em;
   width: 100%;
+  border-collapse: collapse;
 }
+.table th {
+  background-color: rgb(197, 197, 197);
+}
+.table tr td,
 th {
-  background-color: #ddd;
-}
-th,
-td {
-  padding: 15px;
+  padding: 0.8em;
+  text-align: center;
+  border: 1px solid rgb(141, 141, 141);
 }

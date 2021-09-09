@@ -7,7 +7,7 @@ const Contact = () => {
     <div className={styles.Contact}>
       <div className={styles.left}>
         <form>
-          <table>
+          <table className={styles.table}>
             <h2>Pisite nam</h2>
             <tr>
               <td>

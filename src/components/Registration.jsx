@@ -4,7 +4,7 @@ import Button from "./Common/Button";
 const Registration = () => {
   return (
     <div className={styles.Registration}>
-      <table>
+      <table className={styles.table}>
         <tr>
           <td>Ime</td>
           <td>

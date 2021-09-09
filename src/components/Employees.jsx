@@ -3,7 +3,7 @@ import styles from "./Employees.module.css";
 const Employees = () => {
   return (
     <div className={styles.Employees}>
-      <table>
+      <table className={styles.table}>
         <tr>
           <th>Ime</th>
           <th>Prezime</th>
