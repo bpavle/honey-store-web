@@ -16,3 +16,9 @@
   display: inline-block;
   text-decoration: none;
 }
+.menuButtonTextRight {
+  color: white;
+  float: right;
+  margin: 10px;
+  text-decoration: none;
+}

@@ -34,6 +34,9 @@ const Menu = (props) => {
           </Link>
         </div>
       ))}
+      <Link to={"basket"} className={styles.menuButtonTextRight}>
+        Basket
+      </Link>
     </div>
   );
 };
