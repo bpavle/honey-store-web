@@ -38,7 +38,7 @@ const Basket = () => {
         return (
           <div key={product.id}>
             <div style={{ display: "flex" }}>
-              <img src={product.image} alt="" />
+              <img className={styles.img} src={product.image} alt="" />
               <div>
                 <p>{product.label}</p>
                 <p>
