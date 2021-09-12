@@ -27,7 +27,7 @@ const Menu = (props) => {
   return (
     <div className={styles.Menu}>
       {menuItems.map((menuItem) => (
-        <div className={styles.menuButton}>
+        <div className={styles.menuButton} key={menuItem}>
           <Link to={menuItem} className={styles.menuButtonText}>
             {" "}
             {menuItem}{" "}

@@ -35,7 +35,7 @@ const Products = () => {
       data.push(elements[i]);
 
       if ((i + 1) % number_of_columns == 0 || i + 1 == elements.length) {
-        let row = <tr>{data}</tr>;
+        let row = <tr key={i}>{data}</tr>;
         data = [];
         rows.push(row);
       }
