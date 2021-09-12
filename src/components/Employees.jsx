@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Employees.module.css";
 const Employees = () => {
+  let [employees, setEmployees] = useState([
+    {
+      name: "Pera",
+      surname: "Peric",
+      phone: "0641234567",
+      address: "Goricka 82 a",
+      username: "ppera99",
+    },
+    {
+      name: "Mika",
+      surname: "Peric",
+      phone: "0641234567",
+      address: "Goricka 82 a",
+      username: "mmika44",
+    },
+    {
+      name: "Zika",
+      surname: "Zikic",
+      phone: "064123413",
+      address: "Valjevska 17",
+      username: "zivac",
+    },
+  ]);
+
+  console.log(employees);
   return (
     <div className={styles.Employees}>
       <table className={styles.table}>
@@ -12,14 +37,26 @@ const Employees = () => {
           <th>Korisnicko ime</th>
           <th>Obrisi</th>
         </tr>
-        <tr>
-          <td>Pera</td>
-          <td>Peric</td>
-          <td>0641234567</td>
-          <td>Goricka 82 a</td>
-          <td>ppera99</td>
-          <td>O</td>
-        </tr>
+        {employees.map((employee) => {
+          return (
+            <tr key={employee.username}>
+              <td>{employee.name}</td>
+              <td>{employee.surname}</td>
+              <td>{employee.phone}</td>
+              <td>{employee.address}</td>
+              <td>{employee.username}</td>
+              <td
+                onClick={() => {
+                  setEmployees(
+                    employees.filter((e) => employee.username != e.username)
+                  );
+                }}
+              >
+                O
+              </td>
+            </tr>
+          );
+        })}
       </table>
     </div>
   );
