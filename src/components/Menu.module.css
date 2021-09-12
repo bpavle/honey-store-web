@@ -7,13 +7,12 @@
 .menuButton {
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
-  display: inline-block;
+  display: inline-flex;
   text-decoration: none;
 }
 .menuButtonText {
   color: white;
   margin: 10px;
-  display: inline-block;
   text-decoration: none;
 }
 .menuButtonTextRight {
