@@ -1,24 +1,22 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import styles from "./AddEmployee.module.css";
 import Button from "./Common/Button";
-import {EmployeesContext} from "./EmployeesContext";
+import { EmployeesContext } from "./EmployeesContext";
 const AddEmployee = () => {
-    let [setEmployees] = useContext(EmployeesContext);
-    const addEmployee = (e) => {
-let newEmployee={
-    name : document.getElementById("name").value,
-    surname : document.getElementById("surname").value,
-    phone : document.getElementById("phone").value,
+  let [employees, setEmployees] = useContext(EmployeesContext);
+  const addEmployee = () => {
+    let newEmployee = {
+      name: document.getElementById("name").value,
+      surname: document.getElementById("surname").value,
+      phone: document.getElementById("phone").value,
 
-    address : document.getElementById("address").value,
-    username : document.getElementById("username").value,
-    password : document.getElementById("password").value,
-    "confirm-password" : document.getElementById("confirm-password").value,
-
-
-}
-        setEmployees(curr => [...curr,newEmployee])
-    }
+      address: document.getElementById("address").value,
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value,
+      "confirm-password": document.getElementById("confirm-password").value,
+    };
+    setEmployees((curr) => [...curr, newEmployee]);
+  };
   return (
     <div className={styles.AddEmployee}>
       <table className={styles.table}>
