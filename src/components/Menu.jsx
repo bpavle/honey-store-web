@@ -22,6 +22,7 @@ const menuItems = [
   "Employees",
   "Contact",
   "Login",
+  "add-employee"
 ];
 const Menu = (props) => {
   return (

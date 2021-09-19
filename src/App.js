@@ -13,8 +13,11 @@ import Login from './components/Login';
 import Registration from './components/Registration';
 import Cart from './components/Cart';
 import {CartProvider} from './components/CartContext';
+import {EmployeesProvider} from './components/EmployeesContext'
+import AddEmployee from './components/AddEmployee';
 function App() {
   return (
+    <EmployeesProvider>
     <CartProvider>
     <div className="App">
       <Header />
@@ -30,12 +33,14 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/registration" component={Registration} />
         <Route exact path="/Cart" component={Cart} />
+        <Route exact path="/add-employee" component={AddEmployee} />
 
         <Route exact path="/" component={Products} />
         {/* <Route default component={Products} /> */}
       </div>
     </div>
     </CartProvider>
+    </EmployeesProvider>
   );
 }
 

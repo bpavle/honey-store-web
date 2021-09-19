@@ -1,29 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useContext} from "react";
 import styles from "./Employees.module.css";
+import { EmployeesContext } from "./EmployeesContext";
 const Employees = () => {
-  let [employees, setEmployees] = useState([
-    {
-      name: "Pera",
-      surname: "Peric",
-      phone: "0641234567",
-      address: "Goricka 82 a",
-      username: "ppera99",
-    },
-    {
-      name: "Mika",
-      surname: "Peric",
-      phone: "0641234567",
-      address: "Goricka 82 a",
-      username: "mmika44",
-    },
-    {
-      name: "Zika",
-      surname: "Zikic",
-      phone: "064123413",
-      address: "Valjevska 17",
-      username: "zivac",
-    },
-  ]);
+  let [employees, setEmployees] = useContext(EmployeesContext);// this will be used after adding employee functionality is finished
+  // let [employees, setEmployees] = useState([
+  //   {
+  //     name: "Pera",
+  //     surname: "Peric",
+  //     phone: "0641234567",
+  //     address: "Goricka 82 a",
+  //     username: "ppera99",
+  //   },
+  //   {
+  //     name: "Mika",
+  //     surname: "Peric",
+  //     phone: "0641234567",
+  //     address: "Goricka 82 a",
+  //     username: "mmika44",
+  //   },
+  //   {
+  //     name: "Zika",
+  //     surname: "Zikic",
+  //     phone: "064123413",
+  //     address: "Valjevska 17",
+  //     username: "zivac",
+  //   },
+  // ]);
 
   console.log(employees);
   return (
