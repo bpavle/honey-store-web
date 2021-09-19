@@ -9,7 +9,6 @@ const AddEmployee = () => {
       name: document.getElementById("name").value,
       surname: document.getElementById("surname").value,
       phone: document.getElementById("phone").value,
-
       address: document.getElementById("address").value,
       username: document.getElementById("username").value,
       password: document.getElementById("password").value,
