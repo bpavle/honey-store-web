@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styles from "./Products.module.css";
 import Product from "./Product";
 import { getProducts } from "./../api/getProducts.js";
 import AddProductBtn from "./AddProductBtn";
+import { ProductsContext } from "./ProductsContext";
 const Products = () => {
-  let [products, setProducts] = useState([]);
+  let [products, setProducts] = useContext(ProductsContext);
   let [clicked, setClicked] = useState(false);
   useEffect(() => {
     setProducts(getProducts());
