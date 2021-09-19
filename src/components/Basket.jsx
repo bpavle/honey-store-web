@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Basket.module.css";
 import tegla from "../images/tegla.png";
 import medenjaci from "../images/medenjaci.png";
+import Button from "./Common/Button";
 const Basket = () => {
   let [total, setTotal] = useState(0);
   let [products, setProducts] = useState([
@@ -49,7 +50,12 @@ const Basket = () => {
                   Amount:
                   <input
                     type="number"
-                    style={{ width: "30px", fontSize: 18 }}
+                    style={{
+                      width: "30px",
+                      fontSize: 18,
+                      borderRadius: "10px",
+                      marginLeft: "1em",
+                    }}
                     defaultValue={product.amount}
                     onChange={(e) => {
                       setProducts(
@@ -69,12 +75,20 @@ const Basket = () => {
           </div>
         );
       })}
-      <div className={styles.line}></div>
-      <div>
-        Total ={" "}
-        <p style={{ float: "right", color: "red", fontWeight: "bold" }}>
+      <div className={styles.bottom}>
+        <div className={styles.line}></div>
+        <p style={{ float: "left" }}>Total =</p>
+        <p
+          style={{
+            float: "right",
+            marginRight: "1em",
+            color: "red",
+            fontWeight: "bold",
+          }}
+        >
           {total}
         </p>
+        <Button>Order</Button>
       </div>
     </div>
   );
