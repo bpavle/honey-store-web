@@ -26,7 +26,7 @@ const ProductDetails = ({ id,label, image, price, info }) => {
       price: price,
       currency: "din",
       amount: amount,}
-    setCart(curr => [...curr,product]);
+    setCart(curr => [...curr,product]);// KUM: KAKO OVO RADI? :)
   }
 
   return (
