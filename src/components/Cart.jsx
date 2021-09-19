@@ -1,15 +1,14 @@
-import React, { useState, useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./Cart.module.css";
 import Button from "./Common/Button";
-import {CartContext} from "./CartContext"
+import { CartContext } from "./CartContext";
 const Cart = () => {
-  const [cart,setCart] = useContext(CartContext)
+  const [cart, setCart] = useContext(CartContext);
   let [total, setTotal] = useState(0);
-  let [products, setProducts] = useState(cart)
 
   useEffect(() => {
     let tot = 0;
-    products.forEach((product) => {
+    cart.forEach((product) => {
       tot += product.amount * product.price;
     });
     setTotal(tot);
@@ -17,7 +16,7 @@ const Cart = () => {
 
   return (
     <div className={styles.Cart}>
-      {products.map((product) => {
+      {cart.map((product) => {
         return (
           <div key={product.id}>
             <div style={{ display: "flex" }}>
@@ -40,8 +39,8 @@ const Cart = () => {
                     }}
                     defaultValue={product.amount}
                     onChange={(e) => {
-                      setProducts(
-                        products.map((p) =>
+                      setCart(
+                        cart.map((p) =>
                           p.id == product.id
                             ? { ...p, amount: e.target.value }
                             : p
