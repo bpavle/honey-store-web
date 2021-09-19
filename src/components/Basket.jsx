@@ -1,30 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import styles from "./Basket.module.css";
 import tegla from "../images/tegla.png";
 import medenjaci from "../images/medenjaci.png";
 import Button from "./Common/Button";
+import {CartContext} from "./CartContext"
 const Basket = () => {
+  const [cart,setCart] = useContext(CartContext)
   let [total, setTotal] = useState(0);
-  let [products, setProducts] = useState([
-    {
-      id: 1,
-      image: tegla,
-      label: "Neki tekst",
-      info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-      price: 100,
-      currency: "din",
-      amount: 1,
-    },
-    {
-      id: 2,
-      image: medenjaci,
-      label: "Neki tekst",
-      info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
-      price: 100,
-      currency: "din",
-      amount: 1,
-    },
-  ]);
+  let [products, setProducts] = useState(cart)
+
   useEffect(() => {
     let tot = 0;
     products.forEach((product) => {

@@ -12,8 +12,10 @@ import Contact from './components/Contact';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import Basket from './components/Basket';
+import {CartProvider} from './components/CartContext';
 function App() {
   return (
+    <CartProvider>
     <div className="App">
       <Header />
       <Menu />
@@ -33,6 +35,7 @@ function App() {
         {/* <Route default component={Products} /> */}
       </div>
     </div>
+    </CartProvider>
   );
 }
 

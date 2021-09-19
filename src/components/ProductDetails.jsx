@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useContext} from "react";
 
 import styles from "./ProductDetails.module.css";
 import Button from "./Common/Button";
-const ProductDetails = ({ label, image, price, info }) => {
+import { CartContext } from "./CartContext";
+const ProductDetails = ({ id,label, image, price, info }) => {
+  let [cart,setCart] = useContext(CartContext);
   let [amount, setAmount] = useState(1);
   let [total, setTotal] = useState(amount * price);
   const onClickHandler = (e) => {
@@ -15,6 +17,17 @@ const ProductDetails = ({ label, image, price, info }) => {
   useEffect(() => {
     setTotal(amount * price);
   });
+
+  const addToCart = () => {
+    const product = {id: id,
+      image: image,
+      label: label,
+      info: info,
+      price: price,
+      currency: "din",
+      amount: amount,}
+    setCart(curr => [...curr,product]);
+  }
 
   return (
     <div className={styles.container} onClick={onClickHandler}>
@@ -47,7 +60,7 @@ const ProductDetails = ({ label, image, price, info }) => {
             </td>
             <td>= {total}</td>
             <td>
-              <Button>Add to basket</Button>
+              <Button onClick={addToCart}>Add to basket</Button>
             </td>
           </tr>
         </table>
