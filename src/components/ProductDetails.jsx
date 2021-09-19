@@ -60,7 +60,7 @@ const ProductDetails = ({ id,label, image, price, info }) => {
             </td>
             <td>= {total}</td>
             <td>
-              <Button onClick={addToCart}>Add to basket</Button>
+              <Button onClick={addToCart}>Add to Cart</Button>
             </td>
           </tr>
         </table>

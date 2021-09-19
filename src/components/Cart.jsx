@@ -1,10 +1,8 @@
 import React, { useState, useEffect,useContext } from "react";
-import styles from "./Basket.module.css";
-import tegla from "../images/tegla.png";
-import medenjaci from "../images/medenjaci.png";
+import styles from "./Cart.module.css";
 import Button from "./Common/Button";
 import {CartContext} from "./CartContext"
-const Basket = () => {
+const Cart = () => {
   const [cart,setCart] = useContext(CartContext)
   let [total, setTotal] = useState(0);
   let [products, setProducts] = useState(cart)
@@ -18,7 +16,7 @@ const Basket = () => {
   });
 
   return (
-    <div className={styles.Basket}>
+    <div className={styles.Cart}>
       {products.map((product) => {
         return (
           <div key={product.id}>
@@ -78,4 +76,4 @@ const Basket = () => {
   );
 };
 
-export default Basket;
+export default Cart;

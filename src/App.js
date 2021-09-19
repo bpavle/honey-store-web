@@ -11,7 +11,7 @@ import Employees from './components/Employees';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import Registration from './components/Registration';
-import Basket from './components/Basket';
+import Cart from './components/Cart';
 import {CartProvider} from './components/CartContext';
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/registration" component={Registration} />
-        <Route exact path="/basket" component={Basket} />
+        <Route exact path="/Cart" component={Cart} />
 
         <Route exact path="/" component={Products} />
         {/* <Route default component={Products} /> */}
