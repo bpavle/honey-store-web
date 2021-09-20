@@ -15,6 +15,7 @@ const AddEmployee = () => {
       "confirm-password": document.getElementById("confirm-password").value,
     };
     setEmployees((curr) => [...curr, newEmployee]);
+    //  setEmployees([...employees, newEmployee]); above is probably better but do some research!
   };
   return (
     <div className={styles.AddEmployee}>
