@@ -19,12 +19,18 @@ const Cart = () => {
       cart.map((p) => (p.id == product.id ? { ...p, amount: newAmount } : p))
     );
   };
+  {
+    if (total == 0) {
+      return <h1 className={styles.Cart}>Sorry, cart is empty</h1>;
+    }
+  }
   return (
     <div className={styles.Cart}>
       {cart.map((product) => {
         const onChangeHandler = (e) => {
           updateAmount(product, e.target.value);
         };
+
         return (
           <div key={product.id}>
             <div style={{ display: "flex" }}>
