@@ -14,9 +14,17 @@ const Cart = () => {
     setTotal(tot);
   });
 
+  const updateAmount = (product, newAmount) => {
+    setCart(
+      cart.map((p) => (p.id == product.id ? { ...p, amount: newAmount } : p))
+    );
+  };
   return (
     <div className={styles.Cart}>
       {cart.map((product) => {
+        const onChangeHandler = (e) => {
+          updateAmount(product, e.target.value);
+        };
         return (
           <div key={product.id}>
             <div style={{ display: "flex" }}>
@@ -38,15 +46,7 @@ const Cart = () => {
                       marginLeft: "1em",
                     }}
                     defaultValue={product.amount}
-                    onChange={(e) => {
-                      setCart(
-                        cart.map((p) =>
-                          p.id == product.id
-                            ? { ...p, amount: e.target.value }
-                            : p
-                        )
-                      );
-                    }}
+                    onChange={onChangeHandler}
                   />{" "}
                   = {product.amount * product.price}
                   {product.currency}
