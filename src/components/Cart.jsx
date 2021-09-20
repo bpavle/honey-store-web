@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import styles from "./Cart.module.css";
 import Button from "./Common/Button";
-import { CartContext } from "./CartContext";
+import { CartContext } from "./Contexts/CartContext";
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
   let [total, setTotal] = useState(0);

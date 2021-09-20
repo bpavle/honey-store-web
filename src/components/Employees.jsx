@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import styles from "./Employees.module.css";
-import { EmployeesContext } from "./EmployeesContext";
+import { EmployeesContext } from "./Contexts/EmployeesContext";
 const Employees = () => {
   let [employees, setEmployees] = useContext(EmployeesContext);
 

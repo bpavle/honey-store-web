@@ -12,8 +12,8 @@ import Contact from './components/Contact';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import Cart from './components/Cart';
-import { CartProvider } from './components/CartContext';
-import { EmployeesProvider } from './components/EmployeesContext'
+import { CartProvider } from './components/Contexts/CartContext';
+import { EmployeesProvider } from './components/Contexts/EmployeesContext'
 import { ProductsProvider } from './components/ProductsContext'
 
 import AddEmployee from './components/AddEmployee';

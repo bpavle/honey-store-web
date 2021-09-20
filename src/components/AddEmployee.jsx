@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./AddEmployee.module.css";
 import Button from "./Common/Button";
-import { EmployeesContext } from "./EmployeesContext";
+import { EmployeesContext } from "./Contexts/EmployeesContext";
 const AddEmployee = () => {
   let [employees, setEmployees] = useContext(EmployeesContext);
   const addEmployee = () => {

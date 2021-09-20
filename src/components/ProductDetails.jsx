@@ -1,10 +1,10 @@
-import React, { useState, useEffect ,useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import styles from "./ProductDetails.module.css";
 import Button from "./Common/Button";
-import { CartContext } from "./CartContext";
-const ProductDetails = ({ id,label, image, price, info }) => {
-  let [cart,setCart] = useContext(CartContext);
+import { CartContext } from "./Contexts/CartContext";
+const ProductDetails = ({ id, label, image, price, info }) => {
+  let [cart, setCart] = useContext(CartContext);
   let [amount, setAmount] = useState(1);
   let [total, setTotal] = useState(amount * price);
   const onClickHandler = (e) => {
@@ -19,15 +19,17 @@ const ProductDetails = ({ id,label, image, price, info }) => {
   });
 
   const addToCart = () => {
-    const product = {id: id,
+    const product = {
+      id: id,
       image: image,
       label: label,
       info: info,
       price: price,
       currency: "din",
-      amount: amount,}
-    setCart(curr => [...curr,product]);// KUM: KAKO OVO RADI? :)
-  }
+      amount: amount,
+    };
+    setCart((curr) => [...curr, product]); // KUM: KAKO OVO RADI? :)
+  };
 
   return (
     <div className={styles.container} onClick={onClickHandler}>
