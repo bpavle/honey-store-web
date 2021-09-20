@@ -7,17 +7,18 @@ import { ProductsContext } from "./ProductsContext";
 const Products = () => {
   let [products, setProducts] = useContext(ProductsContext);
   let [clicked, setClicked] = useState(false);
-  useEffect(() => {
-    setProducts(getProducts());
-  });
+  // useEffect(() => {
+  //   setProducts(getProducts());
+  // });
   const onClickHandler = () => {
     console.log("Outside click");
     setClicked(true);
   };
   let table_data = products.map(function (product) {
     return (
-      <td>
+      <td key={product.id}>
         <Product
+          key={product.key}
           label={product.label}
           image={product.image}
           id={product.id}
@@ -41,7 +42,11 @@ const Products = () => {
         rows.push(row);
       }
     }
-    return <table>{rows}</table>;
+    return (
+      <table>
+        <tbody>{rows}</tbody>
+      </table>
+    );
   };
   const table = createTable(table_data, 6);
   return (
