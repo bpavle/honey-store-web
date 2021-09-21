@@ -8,32 +8,34 @@ const Contact = () => {
       <div className={styles.left}>
         <form>
           <table className={styles.table}>
-            <h2>Pisite nam</h2>
-            <tr>
-              <td>
-                <label for="email">Your email</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" placeholder="email" id="email"></input>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="textarea">Content</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <textarea id="textarea" type="text"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Button>Posalji</Button>
-              </td>
-            </tr>
+            <tbody>
+              <h2>Pisite nam</h2>
+              <tr>
+                <td>
+                  <label for="email">Your email</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" placeholder="email" id="email"></input>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="textarea">Content</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <textarea id="textarea" type="text"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <Button>Posalji</Button>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </form>
       </div>

@@ -20,60 +20,62 @@ const AddEmployee = () => {
   return (
     <div className={styles.AddEmployee}>
       <table className={styles.table}>
-        <tr>
-          <td>Ime</td>
-          <td>
-            {" "}
-            <input id="name" type="text"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>Prezime</td>
-          <td>
-            {" "}
-            <input id="surname" type="text"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>Kontakt telefon</td>
-          <td>
-            {" "}
-            <input id="phone" type="text"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>Adresa</td>
-          <td>
-            {" "}
-            <input id="address" type="text"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>Korisnicko ime</td>
-          <td>
-            {" "}
-            <input id="username" type="text"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>Lozinka</td>
-          <td>
-            {" "}
-            <input id="password" type="password"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>Ponovi lozinku</td>
-          <td>
-            {" "}
-            <input id="confirm-password" type="password"></input>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <Button onClick={addEmployee}>Add Employee</Button>
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>Ime</td>
+            <td>
+              {" "}
+              <input id="name" type="text"></input>
+            </td>
+          </tr>
+          <tr>
+            <td>Prezime</td>
+            <td>
+              {" "}
+              <input id="surname" type="text"></input>
+            </td>
+          </tr>
+          <tr>
+            <td>Kontakt telefon</td>
+            <td>
+              {" "}
+              <input id="phone" type="text"></input>
+            </td>
+          </tr>
+          <tr>
+            <td>Adresa</td>
+            <td>
+              {" "}
+              <input id="address" type="text"></input>
+            </td>
+          </tr>
+          <tr>
+            <td>Korisnicko ime</td>
+            <td>
+              {" "}
+              <input id="username" type="text"></input>
+            </td>
+          </tr>
+          <tr>
+            <td>Lozinka</td>
+            <td>
+              {" "}
+              <input id="password" type="password"></input>
+            </td>
+          </tr>
+          <tr>
+            <td>Ponovi lozinku</td>
+            <td>
+              {" "}
+              <input id="confirm-password" type="password"></input>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <Button onClick={addEmployee}>Add Employee</Button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );

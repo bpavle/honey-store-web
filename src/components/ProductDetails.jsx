@@ -38,33 +38,35 @@ const ProductDetails = ({ id, label, image, price, info }) => {
       </div>
       <div className={styles.right}>
         <table className={styles.table}>
-          <h3>{label}</h3>
+          <tbody>
+            <h3>{label}</h3>
 
-          <tr>
-            <td colspan="4">
-              <p>{info}</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <b>{price} din</b>
-            </td>
-          </tr>
-          <tr>
-            <td>Amount</td>
-            <td>
-              <input
-                type="number"
-                style={{ width: "30px", fontSize: 18 }}
-                defaultValue={amount}
-                onChange={onChangeHandler}
-              />
-            </td>
-            <td>= {total}</td>
-            <td>
-              <Button onClick={addToCart}>Add to Cart</Button>
-            </td>
-          </tr>
+            <tr>
+              <td colspan="4">
+                <p>{info}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{price} din</b>
+              </td>
+            </tr>
+            <tr>
+              <td>Amount</td>
+              <td>
+                <input
+                  type="number"
+                  style={{ width: "30px", fontSize: 18 }}
+                  defaultValue={amount}
+                  onChange={onChangeHandler}
+                />
+              </td>
+              <td>= {total}</td>
+              <td>
+                <Button onClick={addToCart}>Add to Cart</Button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>

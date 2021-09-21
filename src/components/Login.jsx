@@ -26,33 +26,35 @@ const Login = () => {
     <div className={styles.Login}>
       <p>{message}</p>
       <table className={styles.table}>
-        <tr>
-          <td>
-            <label htmlFor="email">Email</label>
-          </td>
-          <td>
-            <input type="text" id="email" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label htmlFor="password">Password</label>
-          </td>
-          <td>
-            <input type="text" id="password" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" style={{ textAlign: "center" }}>
-            {" "}
-            No account? <Link to="Registration">Register here</Link>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <Button onClick={login}>Login</Button>
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>
+              <label htmlFor="email">Email</label>
+            </td>
+            <td>
+              <input type="text" id="email" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label htmlFor="password">Password</label>
+            </td>
+            <td>
+              <input type="text" id="password" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style={{ textAlign: "center" }}>
+              {" "}
+              No account? <Link to="Registration">Register here</Link>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <Button onClick={login}>Login</Button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );

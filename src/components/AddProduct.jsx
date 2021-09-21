@@ -43,35 +43,37 @@ const AddProduct = () => {
       </div>
       <div className={styles.right}>
         <table>
-          <tr>
-            <td>
-              <label htmlFor="label">Name</label>
-            </td>
-            <td>
-              <input type="text" id="label" name="label"></input>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="info">Description</label>
-            </td>
-            <td>
-              <input type="text" id="info"></input>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="price">Price</label>
-            </td>
-            <td>
-              <input type="text" id="price"></input>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <Button onClick={addProduct}>Create new product</Button>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>
+                <label htmlFor="label">Name</label>
+              </td>
+              <td>
+                <input type="text" id="label" name="label"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label htmlFor="info">Description</label>
+              </td>
+              <td>
+                <input type="text" id="info"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label htmlFor="price">Price</label>
+              </td>
+              <td>
+                <input type="text" id="price"></input>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="2">
+                <Button onClick={addProduct}>Create new product</Button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
