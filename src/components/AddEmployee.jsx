@@ -71,7 +71,7 @@ const AddEmployee = () => {
             </td>
           </tr>
           <tr>
-            <td colspan="2">
+            <td colSpan="2">
               <Button onClick={addEmployee}>Add Employee</Button>
             </td>
           </tr>

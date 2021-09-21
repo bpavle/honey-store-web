@@ -9,10 +9,15 @@ const Contact = () => {
         <form>
           <table className={styles.table}>
             <tbody>
-              <h2>Pisite nam</h2>
               <tr>
                 <td>
-                  <label for="email">Your email</label>
+                  {" "}
+                  <h2>Pisite nam</h2>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label htmlFor="email">Your email</label>
                 </td>
               </tr>
               <tr>
@@ -22,7 +27,7 @@ const Contact = () => {
               </tr>
               <tr>
                 <td>
-                  <label for="textarea">Content</label>
+                  <label htmlFor="textarea">Content</label>
                 </td>
               </tr>
               <tr>
@@ -45,7 +50,7 @@ const Contact = () => {
           тел: 0641234568
         </p>
         <div
-          class="mapouter"
+          className="mapouter"
           style={{
             position: "relative",
             textAlign: "right",
@@ -54,7 +59,7 @@ const Contact = () => {
           }}
         >
           <div
-            class="gmap_canvas"
+            className="gmap_canvas"
             style={{
               overflow: "hidden",
               background: "none!important",
@@ -68,10 +73,10 @@ const Contact = () => {
               height="100%"
               id="gmap_canvas"
               src="https://maps.google.com/maps?q=pere%20velimirovica%208&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              frameborder="0"
+              frameBorder="0"
               scrolling="no"
-              marginheight="0"
-              marginwidth="0"
+              marginHeight="0"
+              marginWidth="0"
             ></iframe>
             <a href="https://getasearch.com/nordvpn-coupon/"></a>
             <br />

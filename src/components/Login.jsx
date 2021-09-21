@@ -44,13 +44,13 @@ const Login = () => {
             </td>
           </tr>
           <tr>
-            <td colspan="2" style={{ textAlign: "center" }}>
+            <td colSpan="2" style={{ textAlign: "center" }}>
               {" "}
               No account? <Link to="Registration">Register here</Link>
             </td>
           </tr>
           <tr>
-            <td colspan="2">
+            <td colSpan="2">
               <Button onClick={login}>Login</Button>
             </td>
           </tr>

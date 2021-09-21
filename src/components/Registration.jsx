@@ -56,7 +56,7 @@ const Registration = () => {
             </td>
           </tr>
           <tr>
-            <td colspan="2">
+            <td colSpan="2">
               <Button>Register</Button>
             </td>
           </tr>
