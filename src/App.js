@@ -35,7 +35,7 @@ function App() {
                 <PrivateRoute exact {...MenuItems.addEmployee} />
               </EmployeesProvider>
               <PrivateRoute exact {...MenuItems.myProfile} />
-              <Route exact path="/contact" component={Contact} />
+              <Route exact {...MenuItems.contact} />
               <PrivateRoute exact {...MenuItems.login} />
               <Route exact {...MenuItems.registration} />
               <PrivateRoute exact {...MenuItems.cart} />
