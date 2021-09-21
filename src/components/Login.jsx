@@ -2,7 +2,7 @@ import React, { useContext, useState, setState } from "react";
 import styles from "./Login.module.css";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import Button from "./Common/Button";
-import loginUser from "../api/loginUser";
+import { loginUser } from "../api/usersServices";
 import { UserContext } from "./Contexts/UserContext";
 const Login = () => {
   let [message, setMessage] = useState();

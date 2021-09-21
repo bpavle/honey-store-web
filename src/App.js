@@ -11,7 +11,7 @@ import Contact from './components/Contact';
 //Contexts
 import { CartProvider } from './components/Contexts/CartContext';
 import { EmployeesProvider } from './components/Contexts/EmployeesContext'
-import { ProductsProvider } from './components/ProductsContext'
+import { ProductsProvider } from './components/Contexts/ProductsContext'
 import { UserProvider } from './components/Contexts/UserContext';
 
 //Utils

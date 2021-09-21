@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
 import styles from "./Products.module.css";
 import Product from "./Product";
-import { getProducts } from "./../api/getProducts.js";
+import { getProducts } from "../api/productServices.js";
 import AddProductBtn from "./AddProductBtn";
-import { ProductsContext } from "./ProductsContext";
+import { ProductsContext } from "./Contexts/ProductsContext";
 const Products = () => {
   let [products, setProducts] = useContext(ProductsContext);
   let [clicked, setClicked] = useState(false);

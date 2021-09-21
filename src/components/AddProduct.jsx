@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import styles from "./AddProduct.module.css";
 import Button from "./Common/Button";
-import { ProductsContext } from "./ProductsContext";
+import { ProductsContext } from "./Contexts/ProductsContext";
 import Product from "./Product";
 const AddProduct = () => {
   let [product, setProduct] = useState({});
