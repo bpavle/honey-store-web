@@ -17,31 +17,37 @@ import { EmployeesProvider } from './components/Contexts/EmployeesContext'
 import { ProductsProvider } from './components/ProductsContext'
 
 import AddEmployee from './components/AddEmployee';
+import { UserProvider } from './components/Contexts/UserContext';
+import PrivateRoute from './utils/PrivateRoute';
 function App() {
   return (
-    <ProductsProvider>
-      <CartProvider>
-        <div className="App">
-          <Header />
-          <Menu />
-          <div style={{ textAlign: 'center' }}>
-            <Route exact path="/home" component={Products} />
-            <Route exact path="/about-us" component={About} />
-            <Route exact path="/orders" component={Orders} />
-            <Route exact path="/my-profile" component={MyProfile} />
-            <EmployeesProvider>
-              <Route exact path="/employees" component={Employees} />
-              <Route exact path="/add-employee" component={AddEmployee} />
-            </EmployeesProvider>
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/registration" component={Registration} />
-            <Route exact path="/cart" component={Cart} />
-            <Route exact path="/" component={Products} />
+
+    <UserProvider>
+      <ProductsProvider>
+        <CartProvider>
+          <div className="App">
+            <Header />
+            <Menu />
+            <div style={{ textAlign: 'center' }}>
+              <Route exact path="/home" component={Products} />
+              <Route exact path="/about-us" component={About} />
+              <PrivateRoute roles={["ROLE_ADMIN", "ROLE_EMPLOYEE"]} exact path="/orders" element={Orders} />
+              <EmployeesProvider>
+                <PrivateRoute roles={["ROLE_ADMIN"]} exact path="/employees" element={Employees} />
+                <PrivateRoute roles={["ROLE_ADMIN"]} exact path="/add-employee" element={AddEmployee} />
+              </EmployeesProvider>
+              <Route exact path="/my-profile" component={MyProfile} />
+              <Route exact path="/contact" component={Contact} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/registration" component={Registration} />
+              <Route exact path="/cart" component={Cart} />
+              <Route exact path="/" component={Products} />
+            </div>
           </div>
-        </div>
-      </CartProvider>
-    </ProductsProvider>
+        </CartProvider>
+      </ProductsProvider>
+    </UserProvider>
+
   );
 }
 
