@@ -1,41 +1,57 @@
-import React from "react";
+import React, { useContext, useState, setState } from "react";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 import Button from "./Common/Button";
+import loginUser from "../api/loginUser";
+import { UserContext } from "./Contexts/UserContext";
 const Login = () => {
+  let [message, setMessage] = useState();
+  let [user, setUser] = useContext(UserContext);
+  const login = () => {
+    let usr = loginUser(
+      document.getElementById("email").value,
+      document.getElementById("password").value
+    );
+    console.log(usr);
+    if (!usr) {
+      setMessage("Wrong email or password");
+    } else {
+      console.log(`User logged in: ${usr}`);
+      setUser({ ...usr, isLoggedIn: true });
+    }
+  };
   return (
     <div className={styles.Login}>
-      <form action="">
-        <table className={styles.table}>
-          <tr>
-            <td>
-              <label htmlFor="username">Username</label>
-            </td>
-            <td>
-              <input type="text" id="username" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="password">Password</label>
-            </td>
-            <td>
-              <input type="text" id="password" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" style={{ textAlign: "center" }}>
-              {" "}
-              No account? <Link to="Registration">Register here</Link>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <Button type="submit">Login</Button>
-            </td>
-          </tr>
-        </table>
-      </form>
+      <p>{message}</p>
+      <table className={styles.table}>
+        <tr>
+          <td>
+            <label htmlFor="email">Email</label>
+          </td>
+          <td>
+            <input type="text" id="email" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label htmlFor="password">Password</label>
+          </td>
+          <td>
+            <input type="text" id="password" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style={{ textAlign: "center" }}>
+            {" "}
+            No account? <Link to="Registration">Register here</Link>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <Button onClick={login}>Login</Button>
+          </td>
+        </tr>
+      </table>
     </div>
   );
 };
