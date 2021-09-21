@@ -1,12 +1,13 @@
 import React, { useContext, useState, setState } from "react";
 import styles from "./Login.module.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import Button from "./Common/Button";
 import loginUser from "../api/loginUser";
 import { UserContext } from "./Contexts/UserContext";
 const Login = () => {
   let [message, setMessage] = useState();
   let [user, setUser] = useContext(UserContext);
+  const history = useHistory();
   const login = () => {
     let usr = loginUser(
       document.getElementById("email").value,
@@ -18,6 +19,7 @@ const Login = () => {
     } else {
       console.log(`User logged in: ${usr}`);
       setUser({ ...usr, isLoggedIn: true });
+      history.push("/home");
     }
   };
   return (
