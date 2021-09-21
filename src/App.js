@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+
 import './App.css';
 import { Route } from 'react-router-dom';
+//Components
 import Header from './components/Header'
 import Menu from './components/Menu'
 import Products from './components/Products'
 import About from './components/About';
-import MyProfile from './components/MyProfile';
-import Orders from './components/Orders';
-import Employees from './components/Employees';
 import Contact from './components/Contact';
-import Login from './components/Login';
-import Registration from './components/Registration';
-import Cart from './components/Cart';
+//Contexts
 import { CartProvider } from './components/Contexts/CartContext';
 import { EmployeesProvider } from './components/Contexts/EmployeesContext'
 import { ProductsProvider } from './components/ProductsContext'
-
-import AddEmployee from './components/AddEmployee';
 import { UserProvider } from './components/Contexts/UserContext';
+
+//Utils
 import PrivateRoute from './utils/PrivateRoute';
+import MenuItems from './utils/Menu'
 function App() {
   return (
 
@@ -27,20 +25,20 @@ function App() {
         <CartProvider>
           <div className="App">
             <Header />
-            <Menu />
+            <Menu MenuItems={MenuItems} />
             <div style={{ textAlign: 'center' }}>
-              <Route exact path="/home" component={Products} />
+              <PrivateRoute exact {...MenuItems.homePage} />
               <Route exact path="/about-us" component={About} />
-              <PrivateRoute roles={["ROLE_ADMIN", "ROLE_EMPLOYEE"]} exact path="/orders" element={Orders} />
+              <PrivateRoute {...MenuItems.orders} exact />
               <EmployeesProvider>
-                <PrivateRoute roles={["ROLE_ADMIN"]} exact path="/employees" element={Employees} />
-                <PrivateRoute roles={["ROLE_ADMIN"]} exact path="/add-employee" element={AddEmployee} />
+                <PrivateRoute exact {...MenuItems.employees} />
+                <PrivateRoute exact {...MenuItems.addEmployee} />
               </EmployeesProvider>
-              <Route exact path="/my-profile" component={MyProfile} />
+              <PrivateRoute exact {...MenuItems.myProfile} />
               <Route exact path="/contact" component={Contact} />
-              <PrivateRoute roles={["ROLE_VISITOR"]} exact path="/login" element={Login} />
-              <Route exact path="/registration" component={Registration} />
-              <PrivateRoute roles={["ROLE_VISITOR", "ROLE_USER"]} exact path="/cart" element={Cart} />
+              <PrivateRoute exact {...MenuItems.login} />
+              <Route exact {...MenuItems.registration} />
+              <PrivateRoute exact {...MenuItems.cart} />
               <Route exact path="/" component={Products} />
             </div>
           </div>
