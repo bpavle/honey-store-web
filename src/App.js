@@ -38,7 +38,7 @@ function App() {
               </EmployeesProvider>
               <Route exact path="/my-profile" component={MyProfile} />
               <Route exact path="/contact" component={Contact} />
-              <Route exact path="/login" component={Login} />
+              <PrivateRoute roles={["ROLE_VISITOR"]} exact path="/login" element={Login} />
               <Route exact path="/registration" component={Registration} />
               <PrivateRoute roles={["ROLE_VISITOR", "ROLE_USER"]} exact path="/cart" element={Cart} />
               <Route exact path="/" component={Products} />
