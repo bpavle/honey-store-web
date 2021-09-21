@@ -7,8 +7,8 @@ const PrivateRoute = ({ element, roles, ...rest }) => {
     console.log(roles);
     console.log(element);
   });
-  const isAuthenticated = true; //TODO
   let [user, setUser] = useContext(UserContext);
+  const isAuthenticated = user.isLoggedIn; //TODO
   return (
     <Route
       {...rest}
