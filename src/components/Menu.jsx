@@ -10,7 +10,14 @@ const Menu = ({ MenuItems }) => {
       {Object.keys(MenuItems).map(function (menuItem) {
         if (MenuItems[menuItem].roles.includes(user.role))
           return (
-            <div className={styles.menuButton} key={menuItem}>
+            <div
+              className={
+                MenuItems[menuItem].right
+                  ? styles.menuButtonRight
+                  : styles.menuButton
+              }
+              key={menuItem}
+            >
               <Link
                 to={MenuItems[menuItem].path}
                 className={styles.menuButtonText}
@@ -21,9 +28,6 @@ const Menu = ({ MenuItems }) => {
             </div>
           );
       })}
-      {/* <Link to={"Cart"} className={styles.menuButtonTextRight}>
-        Cart
-      </Link> */}
     </div>
   );
 };

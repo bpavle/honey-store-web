@@ -15,9 +15,10 @@
   margin: 10px;
   text-decoration: none;
 }
-.menuButtonTextRight {
-  color: white;
+.menuButtonRight {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
   float: right;
-  margin: 10px;
   text-decoration: none;
 }
