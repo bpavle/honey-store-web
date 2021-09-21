@@ -16,8 +16,6 @@ const PrivateRoute = ({ element, roles, ...rest }) => {
         return isAuthenticated && roles.includes(user.role) ? (
           <Route component={element} />
         ) : (
-          // element
-          //<Route {...rest}>{console.log(rest)}</Route>
           <h1>Sorry, you are not authorized to do this</h1>
         );
       }}
