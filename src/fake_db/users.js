@@ -30,6 +30,29 @@ let users = [{
     phone: "23849237432",
     address: "Ulica 3216 sprat 3",
 
-}]
+
+},
+{
+    id: 4,
+    role: "ROLE_SELLER",
+    name: "Mika",
+    surname: "Peric",
+    email: "mika@mail.com",
+    password: "password",
+    phone: "0641234567",
+    address: "Goricka 82 a",
+    username: "mmika44",
+},
+{
+    id: 5,
+    role: "ROLE_SELLER",
+    name: "Zika",
+    email: "zika@mail.com",
+    password: "password",
+    surname: "Zikic",
+    phone: "064123413",
+    address: "Valjevska 17",
+    username: "zivac",
+},]
 
 export default users
