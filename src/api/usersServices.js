@@ -25,5 +25,16 @@ const loginUser = (email, password) => {
     return loggedInUser
 
 }
-
-export { loginUser }
+const addUser = (user) => {
+    console.log(`Trying to add user: ${user}`)
+    if (users.find(usr => usr.email === user.email)) {
+        console.log(`User with ${user.email} already exists`)
+        return false;
+    }
+    else {
+        console.log(`User with ${user.email} added to database`)
+        users.push(user);
+        return true;
+    }
+}
+export { loginUser, addUser }
