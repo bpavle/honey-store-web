@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
-
+import { useHistory } from "react-router-dom";
 import styles from "./ProductDetails.module.css";
 import Button from "./Common/Button";
 import { CartContext } from "./Contexts/CartContext";
+import { UserContext } from "./Contexts/UserContext";
 const ProductDetails = ({ id, label, image, price, info }) => {
+  let [user, setUser] = useContext(UserContext);
   let [cart, setCart] = useContext(CartContext);
   let [amount, setAmount] = useState(1);
   let [total, setTotal] = useState(amount * price);
+  let history = useHistory();
   const onClickHandler = (e) => {
     e.stopPropagation();
   };
@@ -19,6 +22,11 @@ const ProductDetails = ({ id, label, image, price, info }) => {
   });
 
   const addToCart = () => {
+    if (!user.isLoggedIn) {
+      alert("You must be logged in to shop");
+
+      history.push("/login");
+    }
     const product = {
       id: id,
       image: image,
