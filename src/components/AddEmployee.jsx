@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import styles from "./AddEmployee.module.css";
 import Button from "./Common/Button";
 
-import { addUser } from "../api/usersServices";
+import { addUser, getUsersByRole } from "../api/usersServices";
 import { EmployeesContext } from "./Contexts/EmployeesContext";
 const AddEmployee = () => {
   let [employees, setEmployees] = useContext(EmployeesContext);
   const addEmployee = () => {
     let newEmployee = {
+      role: "ROLE_SELLER",
       name: document.getElementById("name").value,
       surname: document.getElementById("surname").value,
       phone: document.getElementById("phone").value,
@@ -17,7 +18,7 @@ const AddEmployee = () => {
       "confirm-password": document.getElementById("confirm-password").value,
     };
     newEmployee.password === newEmployee["confirm-password"]
-      ? addUser(newEmployee) && setEmployees((curr) => [...curr, newEmployee])
+      ? addUser(newEmployee) && setEmployees(getUsersByRole("ROLE_SELLER"))
       : alert("Passwords do not match");
   };
   return (
