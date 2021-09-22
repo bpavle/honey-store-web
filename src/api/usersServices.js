@@ -10,6 +10,20 @@ export function getUsersByRole(role) {
     return users.filter(user => user.role === role)
 }
 
+const getUserById = (id) => {
+    return users.find(user => user.id === id)
+}
+const updateUser = (user) => {
+    console.log("LOG FROM UPDATE")
+    console.log("Updating user " + user)
+    console.log(users)
+    let newUsers = users.map(usr => usr.id === user.id ? user : usr)
+    console.log(newUsers)
+    users.splice(0)
+    users.push(...newUsers)
+    console.log(users)
+    return true
+}
 
 const loginUser = (email, password) => {
     let loggedInUser;
@@ -38,4 +52,4 @@ const addUser = (user) => {
         return true;
     }
 }
-export { loginUser, addUser }
+export { loginUser, addUser, updateUser, getUserById }
