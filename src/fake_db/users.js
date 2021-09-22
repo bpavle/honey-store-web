@@ -45,7 +45,7 @@ let users = [{
 },
 {
     id: 5,
-    role: "ROLE_SELLER",
+    role: "ROLE_CUSTOMER",
     name: "Zika",
     email: "zika@mail.com",
     password: "password",
