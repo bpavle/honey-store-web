@@ -13,27 +13,28 @@ export function getUsersByRole(role) {
 
 const loginUser = (email, password) => {
     let loggedInUser;
-    console.log(`Passed email:${email}, password:${password}`);
+    console.log(`Trying to login with \n email:${email} & password:${password}`);
     users.forEach(user => {
-        console.log(user.email, user.password);
         if (email === user.email && password === user.password) {
-            console.log(user)
             loggedInUser = user;
 
         }
     });
+    loggedInUser ? console.log(`User logged in:\n ${loggedInUser.email}`) : console.error(`FAILED LOGGING IN`)
     return loggedInUser
 
 }
 const addUser = (user) => {
-    console.log(`Trying to add user: ${user}`)
+    console.log(`Trying to add user: ${user.email} to database`)
     if (users.find(usr => usr.email === user.email)) {
         console.log(`User with ${user.email} already exists`)
         return false;
     }
     else {
+        let id = users.length + 2
         console.log(`User with ${user.email} added to database`)
-        users.push(user);
+        users.push({ id, ...user });
+        console.log(users)
         return true;
     }
 }
