@@ -24,7 +24,7 @@ const Employees = () => {
                 <td>{employee.surname}</td>
                 <td>{employee.phone}</td>
                 <td>{employee.address}</td>
-                <td>{employee.username}</td>
+                <td>{employee.email}</td>
                 <td
                   onClick={() => {
                     setEmployees(
