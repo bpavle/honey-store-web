@@ -27,7 +27,7 @@ function App() {
             <Header />
             <Menu MenuItems={MenuItems} />
             <div style={{ textAlign: 'center' }}>
-              <PrivateRoute exact {...MenuItems.homePage} />
+              <Route exact {...MenuItems.homePage} />
               <Route exact path="/about-us" component={About} />
               <PrivateRoute {...MenuItems.orders} exact />
               <EmployeesProvider>
@@ -36,7 +36,8 @@ function App() {
               </EmployeesProvider>
               <PrivateRoute exact {...MenuItems.myProfile} />
               <Route exact {...MenuItems.contact} />
-              <PrivateRoute exact {...MenuItems.login} />
+              <Route exact {...MenuItems.login} />
+              <PrivateRoute exact {...MenuItems.logout} />
               <Route exact {...MenuItems.registration} />
               <PrivateRoute exact {...MenuItems.cart} />
               <Route exact path="/" component={Products} />
