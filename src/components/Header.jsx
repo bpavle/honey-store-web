@@ -9,8 +9,7 @@ const Header = (props) => {
       <div className={styles.Right}>
         <p>Контакт Пере Велимировића 8</p>
         <p>E пошта: medenjaci@gmail.com </p>
-        <p>тел: 0641234568</p>
-        {user.role}
+        <p>тел: 0641234568 {user.role}</p>
       </div>
     </div>
   );
