@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import styles from "./AddEmployee.module.css";
 import Button from "./Common/Button";
+
+import { addUser } from "../api/usersServices";
 import { EmployeesContext } from "./Contexts/EmployeesContext";
 const AddEmployee = () => {
   let [employees, setEmployees] = useContext(EmployeesContext);
@@ -10,12 +12,13 @@ const AddEmployee = () => {
       surname: document.getElementById("surname").value,
       phone: document.getElementById("phone").value,
       address: document.getElementById("address").value,
-      username: document.getElementById("username").value,
+      email: document.getElementById("email").value,
       password: document.getElementById("password").value,
       "confirm-password": document.getElementById("confirm-password").value,
     };
-    setEmployees((curr) => [...curr, newEmployee]);
-    //  setEmployees([...employees, newEmployee]); above is probably better but do some research!
+    newEmployee.password === newEmployee["confirm-password"]
+      ? addUser(newEmployee) && setEmployees((curr) => [...curr, newEmployee])
+      : alert("Passwords do not match");
   };
   return (
     <div className={styles.AddEmployee}>
@@ -53,7 +56,7 @@ const AddEmployee = () => {
             <td>Korisnicko ime</td>
             <td>
               {" "}
-              <input id="username" type="text"></input>
+              <input id="email" type="text"></input>
             </td>
           </tr>
           <tr>
