@@ -9,7 +9,7 @@ import Login from '../components/Login';
 import Registration from '../components/Registration';
 import Cart from '../components/Cart';
 import AddEmployee from '../components/AddEmployee';
-
+import Logout from '../components/Logout';
 const MenuItems = {
     homePage: {
         label: "Products",
@@ -83,7 +83,7 @@ const MenuItems = {
     },
     logout: {
         label: "Logout",
-        component: null,
+        component: Logout,
         path: '/logout',
         roles: ['ROLE_CUSTOMER', 'ROLE_ADMIN', 'ROLE_SELLER'],
         right: false,
