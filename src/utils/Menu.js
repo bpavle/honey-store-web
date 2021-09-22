@@ -78,7 +78,7 @@ const MenuItems = {
         label: "Cart",
         component: Cart,
         path: '/cart',
-        roles: ['ROLE_CUSTOMER', 'ROLE_VISITOR'],
+        roles: ['ROLE_CUSTOMER'],
         right: true
     },
     logout: {
