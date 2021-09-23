@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Orders.module.css";
 import styled from "styled-components";
+import { getOrders } from "../api/usersServices";
 const Orders = () => {
-  let [orders, setOrders] = useState([
-    {
-      id: "33182020",
-      name: "Pera",
-      surname: "Peric",
-      phone: "0641234567",
-      address: "Goricka 82 a",
-      username: "ppera99",
-    },
-  ]);
+  let [orders, setOrders] = useState(getOrders());
   return (
     <div className={styles.Orders}>
       <table className={styles.table}>
@@ -28,13 +20,13 @@ const Orders = () => {
           </tr>
           {orders.map((order) => {
             return (
-              <tr key={order.username}>
-                <td>{order.id}</td>
-                <td>{order.name}</td>
-                <td>{order.surname}</td>
-                <td>{order.phone}</td>
-                <td>{order.address}</td>
-                <td>{order.username}</td>
+              <tr key={order.user.id}>
+                <td>{order.user.id}</td>
+                <td>{order.user.name}</td>
+                <td>{order.user.surname}</td>
+                <td>{order.user.phone}</td>
+                <td>{order.user.address}</td>
+                <td>{order.user.email}</td>
                 <td
                   onClick={() => {
                     console.log(
@@ -45,6 +37,7 @@ const Orders = () => {
                   O
                 </td>
                 <td
+                  //reject order
                   onClick={() => {
                     setOrders(
                       orders.filter((e) => order.username != e.username)
