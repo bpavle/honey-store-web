@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Orders.module.css";
 import styled from "styled-components";
-import { getOrders } from "../api/usersServices";
+import { getOrders, deleteOrder } from "../api/usersServices";
 const Orders = () => {
   let [orders, setOrders] = useState(getOrders());
   return (
@@ -20,7 +20,7 @@ const Orders = () => {
           </tr>
           {orders.map((order) => {
             return (
-              <tr key={order.user.id}>
+              <tr key={order.id}>
                 <td>{order.user.id}</td>
                 <td>{order.user.name}</td>
                 <td>{order.user.surname}</td>
@@ -39,9 +39,10 @@ const Orders = () => {
                 <td
                   //reject order
                   onClick={() => {
-                    setOrders(
-                      orders.filter((e) => order.username != e.username)
-                    );
+                    deleteOrder(order)
+                      ? setOrders(orders.filter((e) => e.id != order.id)) //ZASTO SE OVA KOMPONENTA NE RENDERUJE KAD JOJ JE PROMENJEN STEJT OVAKO setOrders(getOrders())
+                      : alert("Something went wrong with deleting order");
+                    console.log(orders);
                   }}
                 >
                   O
