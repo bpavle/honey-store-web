@@ -41,7 +41,6 @@ let users = [{
     password: "password",
     phone: "0641234567",
     address: "Goricka 82 a",
-    username: "mmika44",
 },
 {
     id: 5,
@@ -52,7 +51,16 @@ let users = [{
     surname: "Zikic",
     phone: "064123413",
     address: "Valjevska 17",
-    username: "zivac",
+},
+{
+    id: 5,
+    role: "ROLE_CUSTOMER",
+    name: "Jova",
+    email: "zmaj@mail.com",
+    password: "password",
+    surname: "Jovanovic",
+    phone: "064123413",
+    address: "Cikina 17",
 },]
 
 export default users
