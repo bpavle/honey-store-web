@@ -53,6 +53,11 @@ const addUser = (user) => {
     }
 }
 
+const deleteUser = (user) => {
+    users.splice(users.indexOf(user), 1)
+    return true
+}
+
 const createOrder = (order) => {
     console.log(orders)
     const lastId = orders.length > 0 ? orders[orders.length - 1].id : -1;
@@ -66,4 +71,4 @@ const deleteOrder = (order) => {
     orders.splice(orders.indexOf(order), 1)
     return true
 }
-export { loginUser, addUser, updateUser, getUserById, createOrder, getOrders, deleteOrder }
+export { loginUser, addUser, updateUser, getUserById, createOrder, getOrders, deleteOrder, deleteUser }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import styles from "./Employees.module.css";
 import { EmployeesContext } from "./Contexts/EmployeesContext";
+import { deleteUser } from "../api/usersServices";
 const Employees = () => {
   let [employees, setEmployees] = useContext(EmployeesContext);
 
@@ -27,10 +28,12 @@ const Employees = () => {
                 <td>{employee.email}</td>
                 <td
                   onClick={() => {
-                    //TODO
-                    setEmployees(
-                      employees.filter((e) => employee.username != e.username)
-                    );
+                    deleteUser(employee)
+                      ? setEmployees(
+                          employees.filter((e) => e.id != employee.id)
+                        ) //ZASTO SE OVA KOMPONENTA NE RENDERUJE KAD JOJ JE PROMENJEN STEJT OVAKO setOrders(getOrders())
+                      : alert("Something went wrong with deleting employee");
+                    // console.log(users);
                   }}
                 >
                   O
