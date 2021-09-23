@@ -25,7 +25,8 @@ const Cart = () => {
   };
 
   const order = () => {
-    createOrder({ user: user, cart: cart });
+    createOrder({ user: user, cart: cart, status: "unresolved" });
+    setCart([]);
   };
   {
     if (total == 0) {
