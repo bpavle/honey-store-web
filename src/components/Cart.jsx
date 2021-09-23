@@ -2,9 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import styles from "./Cart.module.css";
 import Button from "./Common/Button";
 import { CartContext } from "./Contexts/CartContext";
+import { OrderContext } from "./Contexts/OrderContext";
+import { UserContext } from "./Contexts/UserContext";
+import { createOrder } from "../api/usersServices";
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
   let [total, setTotal] = useState(0);
+  let [user, setUser] = useContext(UserContext);
 
   useEffect(() => {
     let tot = 0;
@@ -18,6 +22,10 @@ const Cart = () => {
     setCart(
       cart.map((p) => (p.id == product.id ? { ...p, amount: newAmount } : p))
     );
+  };
+
+  const order = () => {
+    createOrder({ user: user, cart: cart });
   };
   {
     if (total == 0) {
@@ -75,7 +83,7 @@ const Cart = () => {
         >
           {total}
         </p>
-        <Button>Order</Button>
+        <Button onClick={order}>Order</Button>
       </div>
     </div>
   );
