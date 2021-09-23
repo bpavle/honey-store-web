@@ -54,7 +54,15 @@ const addUser = (user) => {
 }
 
 const createOrder = (order) => {
-    orders.push(order)
+    console.log(orders)
+    const lastId = orders.length > 0 ? orders[orders.length - 1].id : -1;
+    orders.push({ ...order, id: lastId + 1 })
     console.log(orders)
 }
-export { loginUser, addUser, updateUser, getUserById, createOrder }
+const getOrders = () => {
+    return orders
+}
+const deleteOrder = (id) => {
+    //TODO  
+}
+export { loginUser, addUser, updateUser, getUserById, createOrder, getOrders }
