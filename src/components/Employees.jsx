@@ -27,6 +27,7 @@ const Employees = () => {
                 <td>{employee.email}</td>
                 <td
                   onClick={() => {
+                    //TODO
                     setEmployees(
                       employees.filter((e) => employee.username != e.username)
                     );
