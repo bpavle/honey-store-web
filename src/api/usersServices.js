@@ -1,6 +1,6 @@
 
 import users from "../fake_db/users"
-
+import orders from "../fake_db/orders"
 
 export function getUsers() {
     return users
@@ -52,4 +52,9 @@ const addUser = (user) => {
         return true;
     }
 }
-export { loginUser, addUser, updateUser, getUserById }
+
+const createOrder = (order) => {
+    orders.push(order)
+    console.log(orders)
+}
+export { loginUser, addUser, updateUser, getUserById, createOrder }
