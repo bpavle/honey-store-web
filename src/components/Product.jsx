@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./Product.module.css";
 import ProductDetails from "./ProductDetails";
+import { ClickContext } from "./Contexts/ClickContext";
 const Product = (props) => {
-  let [isClicked, setIsClicked] = useState(props.clicked);
+  let [clicked, setClicked] = useContext(ClickContext);
+  let [isClicked, setIsClicked] = useState(clicked);
+  // console.log([isClicked, setIsClicked]);
   const onClickHandler = (e) => {
     e.stopPropagation();
     console.log("Clicked component with id:" + props.id);
-    setIsClicked(true);
+    setIsClicked(true); //show details
   };
   const clear = () => {
-    setIsClicked(false);
+    setIsClicked(false); //show details
   };
   return (
     <>
       {isClicked && (
         <div className={styles.clear} onClick={clear}>
-          <ProductDetails {...props}></ProductDetails>
+          <ProductDetails func={setIsClicked} {...props}></ProductDetails>
         </div>
       )}
       <div className={styles.container} onClick={onClickHandler}>

@@ -4,7 +4,7 @@ import styles from "./ProductDetails.module.css";
 import Button from "./Common/Button";
 import { CartContext } from "./Contexts/CartContext";
 import { UserContext } from "./Contexts/UserContext";
-const ProductDetails = ({ id, label, image, price, info }) => {
+const ProductDetails = ({ id, label, image, price, info, func }) => {
   let [user, setUser] = useContext(UserContext);
   let [cart, setCart] = useContext(CartContext);
   let [amount, setAmount] = useState(1);
@@ -36,7 +36,8 @@ const ProductDetails = ({ id, label, image, price, info }) => {
       currency: "din",
       amount: amount,
     };
-    setCart((curr) => [...curr, product]); // KUM: KAKO OVO RADI? :)
+    setCart((curr) => [...curr, product]); // CHECK PRODUCT ID IF IT ALREADY EXIST, JUST INCREMENT, DONT ADD SAME PRODUCT
+    func(false);
   };
 
   return (
