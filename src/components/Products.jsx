@@ -4,15 +4,16 @@ import Product from "./Product";
 import { getProducts } from "../api/productServices.js";
 import AddProductBtn from "./AddProductBtn";
 import { ProductsContext } from "./Contexts/ProductsContext";
+import { ClickContext } from "./Contexts/ClickContext";
 const Products = () => {
   let [products, setProducts] = useContext(ProductsContext);
-  let [clicked, setClicked] = useState(false);
+  let [clicked, setClicked] = useContext(ClickContext);
   // useEffect(() => {
   //   setProducts(getProducts());
   // });
   const onClickHandler = () => {
     console.log("Outside click");
-    setClicked(true);
+    setClicked(false); //show details
   };
   let table_data = products.map(function (product) {
     return (
@@ -24,7 +25,7 @@ const Products = () => {
           id={product.id}
           price={product.price}
           info={product.info}
-          clicked={false}
+          //clicked={clicked}
           currency={product.currency}
         />
       </td>

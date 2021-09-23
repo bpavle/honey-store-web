@@ -13,6 +13,7 @@ import { CartProvider } from './components/Contexts/CartContext';
 import { EmployeesProvider } from './components/Contexts/EmployeesContext'
 import { ProductsProvider } from './components/Contexts/ProductsContext'
 import { UserProvider } from './components/Contexts/UserContext';
+import { ClickProvider } from './components/Contexts/ClickContext'
 
 //Utils
 import PrivateRoute from './utils/PrivateRoute';
@@ -27,7 +28,9 @@ function App() {
             <Header />
             <Menu MenuItems={MenuItems} />
             <div style={{ textAlign: 'center' }}>
-              <Route exact {...MenuItems.homePage} />
+              <ClickProvider >
+                <Route exact {...MenuItems.homePage} />
+              </ClickProvider >
               <Route exact path="/about-us" component={About} />
               <PrivateRoute {...MenuItems.orders} exact />
               <EmployeesProvider>
