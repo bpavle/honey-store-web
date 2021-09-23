@@ -62,7 +62,8 @@ const createOrder = (order) => {
 const getOrders = () => {
     return orders
 }
-const deleteOrder = (id) => {
-    //TODO  
+const deleteOrder = (order) => {
+    orders.splice(orders.indexOf(order), 1)
+    return true
 }
-export { loginUser, addUser, updateUser, getUserById, createOrder, getOrders }
+export { loginUser, addUser, updateUser, getUserById, createOrder, getOrders, deleteOrder }
