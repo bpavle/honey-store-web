@@ -1,6 +1,6 @@
 .container {
   position: absolute;
-  background-color: rgba(255, 228, 196, 0.521);
+  background-color: rgba(216, 172, 118, 0.781);
   text-align: center;
   border-radius: 10px;
   top: 50%;
@@ -12,6 +12,7 @@
 }
 
 .left {
+  padding-top: 1em;
   float: left;
   width: 40%;
 }
