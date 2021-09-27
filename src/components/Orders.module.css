@@ -24,3 +24,12 @@
   text-align: center;
   border: 1px solid;
 }
+.image_button {
+  width: 25px;
+  height: 25px;
+}
+.image_button :hover {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}

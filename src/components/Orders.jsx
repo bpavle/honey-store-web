@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Orders.module.css";
 import styled from "styled-components";
+import btn_approve from "../assets/btn_approve.png";
+import btn_reject from "../assets/btn_reject.png";
+
 import { getOrders, deleteOrder } from "../api/usersServices";
 const Orders = () => {
   let [orders, setOrders] = useState(getOrders());
@@ -34,7 +37,11 @@ const Orders = () => {
                     );
                   }}
                 >
-                  O
+                  <img
+                    className={styles.image_button}
+                    src={btn_approve}
+                    alt="approve"
+                  />
                 </td>
                 <td
                   //reject order
@@ -45,7 +52,11 @@ const Orders = () => {
                     console.log(orders);
                   }}
                 >
-                  O
+                  <img
+                    className={styles.image_button}
+                    src={btn_reject}
+                    alt="approve"
+                  />
                 </td>
               </tr>
             );
