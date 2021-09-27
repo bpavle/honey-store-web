@@ -1,14 +1,57 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Orders.module.css";
 import styled from "styled-components";
+
 import btn_approve from "../assets/btn_approve.png";
 import btn_reject from "../assets/btn_reject.png";
+import icon_filter from "../assets/icon_filter.png";
 
 import { getOrders, deleteOrder } from "../api/usersServices";
 const Orders = () => {
   let [orders, setOrders] = useState(getOrders());
+  let [filter, setFilter] = useState("unresolved");
+  let [showExtraFilter, setShowExtraFilter] = useState(false);
   return (
     <div className={styles.Orders}>
+      <div
+        style={{ verticalAlign: "middle" }}
+        onClick={() => {
+          setShowExtraFilter(!showExtraFilter);
+        }}
+      >
+        <img className={styles.image_button} src={icon_filter}></img>
+      </div>
+      {showExtraFilter && (
+        <div
+          className="t"
+          onClick={() => {
+            setShowExtraFilter(!showExtraFilter);
+          }}
+        >
+          <select
+            value={filter}
+            name="status"
+            id="status"
+            onChange={(e) => {
+              setFilter(e.target.value);
+              if (e.target.value != "all") {
+                console.log(
+                  `Filter po ${e.target.value} a filter je ${filter} `
+                );
+                setOrders(
+                  orders.filter((order) => order.status == e.target.value)
+                );
+              } else {
+                setOrders(getOrders()); //TODO: change this
+              }
+            }}
+          >
+            <option value="resolved">Resolved</option>
+            <option value="unresolved">Unresolved</option>
+            <option value="all">All</option>
+          </select>
+        </div>
+      )}
       <table className={styles.table}>
         <tbody>
           <tr>
@@ -17,19 +60,21 @@ const Orders = () => {
             <th>Prezime</th>
             <th>Telefon</th>
             <th>Adresa</th>
-            <th>Korisnicko ime</th>
+            <th>Email</th>
+            <th>Status</th>
             <th>Odobri</th>
             <th>Odbij</th>
           </tr>
           {orders.map((order) => {
             return (
               <tr key={order.id}>
-                <td>{order.user.id}</td>
+                <td>{order.id}</td>
                 <td>{order.user.name}</td>
                 <td>{order.user.surname}</td>
                 <td>{order.user.phone}</td>
                 <td>{order.user.address}</td>
                 <td>{order.user.email}</td>
+                <td>{order.status}</td>
                 <td
                   onClick={() => {
                     console.log(
