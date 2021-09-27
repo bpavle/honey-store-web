@@ -48,10 +48,11 @@ const ProductDetails = ({ id, label, image, price, info, func }) => {
       <div className={styles.right}>
         <table className={styles.table}>
           <tbody>
-            <h3>{label}</h3>
-
+            <tr id={styles.product_name} colSpan="4">
+              {label}
+            </tr>
             <tr>
-              <td colspan="4">
+              <td colSpan="4">
                 <p>{info}</p>
               </td>
             </tr>
