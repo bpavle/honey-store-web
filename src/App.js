@@ -21,34 +21,34 @@ import MenuItems from './utils/Menu'
 function App() {
   return (
 
-    <UserProvider>
-      <ProductsProvider>
-        <CartProvider>
-          <div className="App">
-            <Header />
-            <Menu MenuItems={MenuItems} />
-            <div style={{ textAlign: 'center' }}>
-              <ClickProvider >
+    <ClickProvider >
+      <UserProvider>
+        <ProductsProvider>
+          <CartProvider>
+            <div className="App">
+              <Header />
+              <Menu MenuItems={MenuItems} />
+              <div style={{ textAlign: 'center' }}>
                 <Route exact {...MenuItems.homePage} />
-              </ClickProvider >
-              <Route exact path="/about-us" component={About} />
-              <PrivateRoute {...MenuItems.orders} exact />
-              <EmployeesProvider>
-                <PrivateRoute exact {...MenuItems.employees} />
-                <PrivateRoute exact {...MenuItems.addEmployee} />
-              </EmployeesProvider>
-              <PrivateRoute exact {...MenuItems.myProfile} />
-              <Route exact {...MenuItems.contact} />
-              <Route exact {...MenuItems.login} />
-              <PrivateRoute exact {...MenuItems.logout} />
-              <Route exact {...MenuItems.registration} />
-              <PrivateRoute exact {...MenuItems.cart} />
-              <Route exact path="/" component={Products} />
+                <Route exact path="/about-us" component={About} />
+                <PrivateRoute {...MenuItems.orders} exact />
+                <EmployeesProvider>
+                  <PrivateRoute exact {...MenuItems.employees} />
+                  <PrivateRoute exact {...MenuItems.addEmployee} />
+                </EmployeesProvider>
+                <PrivateRoute exact {...MenuItems.myProfile} />
+                <Route exact {...MenuItems.contact} />
+                <Route exact {...MenuItems.login} />
+                <PrivateRoute exact {...MenuItems.logout} />
+                <Route exact {...MenuItems.registration} />
+                <PrivateRoute exact {...MenuItems.cart} />
+                <Route exact path="/" component={Products} />
+              </div>
             </div>
-          </div>
-        </CartProvider>
-      </ProductsProvider>
-    </UserProvider>
+          </CartProvider>
+        </ProductsProvider>
+      </UserProvider>
+    </ClickProvider >
 
   );
 }
