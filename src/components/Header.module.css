@@ -5,10 +5,13 @@
   display: block;
 }
 .Left {
+  text-align: center;
+  vertical-align: middle;
   float: left;
-
-  font-size: 40px;
-  margin: 40px 0 40px 0;
+  top: 50%;
+  margin-top: 3vh;
+  font-size: 3em;
+  /* height: 15vh; */
 }
 .Right {
   width: 25%;
