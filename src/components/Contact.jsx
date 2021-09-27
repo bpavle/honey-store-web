@@ -54,7 +54,7 @@ const Contact = () => {
           style={{
             position: "relative",
             textAlign: "right",
-            height: "500px",
+            height: "47vh",
             width: "100%",
           }}
         >
