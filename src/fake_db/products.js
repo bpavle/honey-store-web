@@ -1,5 +1,21 @@
 import tegla from "../images/tegla.png"
 import medenjaci from "../images/medenjaci.png";
+import medenjaci2 from "../images/medenjaci2.png";
+
+import med_livadski from "../images/med-livadski.jpg";
+import med_bagrem from "../images/med-bagrem.png";
+
+import sesirg from "../images/sesir.gif";
+import sesir2 from "../images/sesir2.png";
+
+
+import kosnica from "../images/kosnica.png";
+import ramovi from "../images/ramovi.png";
+import ramovi2 from "../images/ramovi2.png";
+
+
+
+
 let products = [{
     id: 1,
     image: tegla,
@@ -19,7 +35,7 @@ let products = [{
     ,
 {
     id: 3,
-    image: medenjaci,
+    image: med_bagrem,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
     price: 100,
@@ -28,7 +44,7 @@ let products = [{
     ,
 {
     id: 4,
-    image: medenjaci,
+    image: ramovi2,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
     price: 100,
@@ -37,8 +53,8 @@ let products = [{
     ,
 {
     id: 5,
-    image: medenjaci,
-    label: "Neki tekst",
+    image: kosnica,
+    label: "Kosnica",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
     price: 100,
     currency: "din"
@@ -55,7 +71,7 @@ let products = [{
     ,
 {
     id: 7,
-    image: medenjaci,
+    image: ramovi,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
     price: 100,
@@ -73,7 +89,7 @@ let products = [{
     ,
 {
     id: 9,
-    image: medenjaci,
+    image: sesirg,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
     price: 100,
@@ -82,7 +98,7 @@ let products = [{
     ,
 {
     id: 10,
-    image: medenjaci,
+    image: sesir2,
     label: "Neki tekst",
     info: "Neki duzi info o ovom proizvodu koji se vidi kada se klikne",
     price: 100,
