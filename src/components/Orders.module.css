@@ -37,3 +37,13 @@ select {
   background-color: rgb(153, 109, 52);
   color: antiquewhite;
 }
+.clear {
+  position: absolute;
+  background-color: rgba(109, 109, 109, 0.521);
+  text-align: center;
+  top: 60vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 100vw;
+}

@@ -1,0 +1,27 @@
+.container {
+  position: absolute;
+  background-color: rgba(216, 172, 118, 0.781);
+  text-align: center;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -400px;
+  height: 250px;
+  width: 800px;
+}
+
+.left {
+  padding-top: 1em;
+  float: left;
+  width: 40%;
+}
+.right {
+  display: inline-block;
+  width: 50%;
+  height: 100px;
+}
+.table {
+  padding-top: 1em;
+  text-align: left;
+}
