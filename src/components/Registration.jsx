@@ -16,6 +16,12 @@ const Registration = () => {
       password: document.getElementById("password").value,
       "confirm-password": document.getElementById("confirm-password").value,
     };
+    for (const field in newUser) {
+      if (!newUser[field]) {
+        alert("Please enter all information");
+        return;
+      }
+    }
     newUser.password === newUser["confirm-password"]
       ? addUser(newUser)
       : alert("Passwords do not match");
