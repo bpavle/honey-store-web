@@ -31,7 +31,7 @@ const AddProduct = () => {
     <div className={styles.container} onClick={onClickHandler}>
       <div className={styles.left}>
         <div className={styles.image}>
-          <img src={product.image}></img>
+          <img className={styles.image} src={product.image}></img>
         </div>
         <input
           type="file"
