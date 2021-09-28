@@ -22,7 +22,7 @@ const Orders = () => {
     setIsClicked(false); //show details
   };
   useEffect(() => {
-    orders = getOrders().filter((order) => order.status == filter);
+    orders = getOrders();
   });
   return (
     <>
@@ -83,8 +83,8 @@ const Orders = () => {
               <th>Adresa</th>
               <th>Email</th>
               <th>Status</th>
-              <th>Odobri</th>
-              <th>Odbij</th>
+              {filter == "unresolved" && <th>Odobri</th>}
+              {filter == "unresolved" && <th>Odbij</th>}
             </tr>
             {orders.map((order) => {
               return (
@@ -96,34 +96,38 @@ const Orders = () => {
                   <td>{order.user.address}</td>
                   <td>{order.user.email}</td>
                   <td>{order.status}</td>
-                  <td
-                    onClick={(e) => {
-                      alert(`Order with order id ${order.id} is approved`);
-                      order.status = "resolved";
-                      history.push("/orders");
-                    }}
-                  >
-                    <img
-                      className={styles.image_button}
-                      src={btn_approve}
-                      alt="approve"
-                    />
-                  </td>
-                  <td
-                    //reject order
-                    onClick={() => {
-                      deleteOrder(order)
-                        ? setOrders(orders.filter((e) => e.id != order.id)) //ZASTO SE OVA KOMPONENTA NE RENDERUJE KAD JOJ JE PROMENJEN STEJT OVAKO setOrders(getOrders())
-                        : alert("Something went wrong with deleting order");
-                      console.log(orders);
-                    }}
-                  >
-                    <img
-                      className={styles.image_button}
-                      src={btn_reject}
-                      alt="approve"
-                    />
-                  </td>
+                  {filter == "unresolved" && (
+                    <td
+                      onClick={(e) => {
+                        alert(`Order with order id ${order.id} is approved`);
+                        order.status = "resolved";
+                        history.push("/orders");
+                      }}
+                    >
+                      <img
+                        className={styles.image_button}
+                        src={btn_approve}
+                        alt="approve"
+                      />
+                    </td>
+                  )}
+                  {filter == "unresolved" && (
+                    <td
+                      //reject order
+                      onClick={() => {
+                        deleteOrder(order)
+                          ? setOrders(orders.filter((e) => e.id != order.id)) //ZASTO SE OVA KOMPONENTA NE RENDERUJE KAD JOJ JE PROMENJEN STEJT OVAKO setOrders(getOrders())
+                          : alert("Something went wrong with deleting order");
+                        console.log(orders);
+                      }}
+                    >
+                      <img
+                        className={styles.image_button}
+                        src={btn_reject}
+                        alt="approve"
+                      />
+                    </td>
+                  )}
                 </tr>
               );
             })}
