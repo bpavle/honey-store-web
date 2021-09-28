@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./Registration.module.css";
 import Button from "./Common/Button";
+import { useHistory } from "react-router-dom";
 import { addUser } from "../api/usersServices";
 const Registration = () => {
+  const history = useHistory();
   const registerUser = () => {
     let newUser = {
       role: "ROLE_CUSTOMER",
@@ -17,6 +19,8 @@ const Registration = () => {
     newUser.password === newUser["confirm-password"]
       ? addUser(newUser)
       : alert("Passwords do not match");
+    history.push("/login");
+    alert("You have successfully registered to our store. Now you can log in");
   };
   return (
     <div className={styles.Registration}>
