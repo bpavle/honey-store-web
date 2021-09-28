@@ -74,7 +74,7 @@ const MyProfile = () => {
             </td>
           </tr>
           <tr>
-            <td>Korisnicko ime</td>
+            <td>Email</td>
             <td>
               {" "}
               <input placeholder={user.email} id="email" type="text"></input>

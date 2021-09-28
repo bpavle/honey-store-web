@@ -54,7 +54,7 @@ const AddEmployee = () => {
             </td>
           </tr>
           <tr>
-            <td>Korisnicko ime</td>
+            <td>Email</td>
             <td>
               {" "}
               <input id="email" type="text"></input>

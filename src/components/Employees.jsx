@@ -15,7 +15,7 @@ const Employees = () => {
             <th>Prezime</th>
             <th>Telefon</th>
             <th>Adresa</th>
-            <th>Korisnicko ime</th>
+            <th>Email</th>
             <th>Obrisi</th>
           </tr>
           {employees.map((employee) => {
