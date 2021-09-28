@@ -8,5 +8,10 @@ let orders = [{
     user: users[4],
     id: 11,
     status: "unresolved"
+},
+{
+    user: users[4],
+    id: 13,
+    status: "resolved"
 }];
 export default orders;
