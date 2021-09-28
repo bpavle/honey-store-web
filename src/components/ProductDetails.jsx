@@ -36,6 +36,15 @@ const ProductDetails = ({ id, label, image, price, info, func }) => {
       currency: "din",
       amount: amount,
     };
+    if (cart) {
+      for (let p of cart) {
+        if (p.id == product.id) {
+          console.log("ISTI ID");
+          p.amount = parseInt(p.amount) + parseInt(product.amount);
+          return;
+        }
+      }
+    }
     setCart((curr) => [...curr, product]); // CHECK PRODUCT ID IF IT ALREADY EXIST, JUST INCREMENT, DONT ADD SAME PRODUCT
     func(false);
   };
