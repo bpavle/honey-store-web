@@ -66,7 +66,14 @@ const resources = {
             "Unresolved": "Необрађена",
             "Add to cart": "Додај у корпу",
             "Register": "Региструј се",
-            "Login": "Пријави се"
+            "Login": "Пријави се",
+            "Honey cookies": "Медењаци",
+            "Products": "Производи",
+            "About": "О нама",
+            "My Profile": "Мој Профил",
+            "Logout": "Излогуј се",
+            "Cart": "Корпа",
+            "Registration": "Регистрација"
         }
     }
 };
@@ -75,7 +82,7 @@ i18n
     .use(initReactI18next) // passes i18n down to react-i18next
     .init({
         resources,
-        lng: "rs", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+        lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
         // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
         // if you're using a language detector, do not define the lng option
 
