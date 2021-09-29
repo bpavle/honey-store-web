@@ -1,3 +1,4 @@
+import React from 'react';
 
 import Products from '../components/Products'
 import About from '../components/About';
@@ -10,79 +11,83 @@ import Registration from '../components/Registration';
 import Cart from '../components/Cart';
 import AddEmployee from '../components/AddEmployee';
 import Logout from '../components/Logout';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
+import i18next from 'i18next';
 const MenuItems = {
+
     homePage: {
-        label: "Products",
+        label: i18next.t("Products"),
         component: Products,
         path: '/home',
         roles: ['ROLE_CUSTOMER', 'ROLE_ADMIN', 'ROLE_VISITOR', 'ROLE_SELLER'],
         right: false
     },
     about: {
-        label: "About",
+        label: i18next.t("About"),
         component: About,
         path: '/about-us',
         roles: ['ROLE_CUSTOMER', 'ROLE_ADMIN', 'ROLE_VISITOR', 'ROLE_SELLER'],
         right: false
     },
     orders: {
-        label: "Orders",
+        label: i18next.t("Orders"),
         component: Orders,
         path: '/orders',
         roles: ['ROLE_ADMIN', 'ROLE_SELLER'],
         right: false
     },
     myProfile: {
-        label: "My Profile",
+        label: i18next.t("My Profile"),
         component: MyProfile,
         path: '/my-profile',
         roles: ['ROLE_CUSTOMER', 'ROLE_ADMIN', 'ROLE_SELLER'],
         right: false
     },
     employees: {
-        label: "Employees",
+        label: i18next.t("Employees"),
         component: Employees,
         path: '/employees',
         roles: ['ROLE_ADMIN'],
         right: false
     },
     addEmployee: {
-        label: "Add Employee",
+        label: i18next.t("Add Employee"),
         component: AddEmployee,
         path: '/add-employee',
         roles: ['ROLE_ADMIN'],
         right: false
     },
     contact: {
-        label: "Contact",
+        label: i18next.t("Contact"),
         component: Contact,
         path: '/contact',
         roles: ['ROLE_CUSTOMER', 'ROLE_ADMIN', 'ROLE_VISITOR', 'ROLE_SELLER'],
         right: false
     },
     login: {
-        label: "Login",
+        label: i18next.t("Login"),
         component: Login,
         path: '/login',
         roles: ['ROLE_VISITOR'],
         right: false
     },
     registration: {
-        label: "Registration",
+        label: i18next.t("Registration"),
         component: Registration,
         path: '/registration',
         roles: ['ROLE_VISITOR'],
         right: false
     },
     cart: {
-        label: "Cart",
+        label: i18next.t("Cart"),
         component: Cart,
         path: '/cart',
         roles: ['ROLE_CUSTOMER'],
         right: true
     },
     logout: {
-        label: "Logout",
+        label: i18next.t("Logout"),
         component: Logout,
         path: '/logout',
         roles: ['ROLE_CUSTOMER', 'ROLE_ADMIN', 'ROLE_SELLER'],
