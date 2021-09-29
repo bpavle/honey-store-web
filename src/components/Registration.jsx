@@ -3,7 +3,10 @@ import styles from "./Registration.module.css";
 import Button from "./Common/Button";
 import { useHistory } from "react-router-dom";
 import { addUser } from "../api/usersServices";
+import { useTranslation } from "react-i18next";
 const Registration = () => {
+  const { t, i18n } = useTranslation();
+
   const history = useHistory();
   const registerUser = () => {
     let newUser = {
@@ -33,49 +36,49 @@ const Registration = () => {
       <table className={styles.table}>
         <tbody>
           <tr>
-            <td>Ime</td>
+            <td>{t("Name")}</td>
             <td>
               {" "}
               <input id="name" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Prezime</td>
+            <td>{t("Surname")}</td>
             <td>
               {" "}
               <input id="surname" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Kontakt telefon</td>
+            <td>{t("Phone")}</td>
             <td>
               {" "}
               <input id="phone" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Adresa</td>
+            <td>{t("Address")}</td>
             <td>
               {" "}
               <input id="address" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Email</td>
+            <td>{t("Email")}</td>
             <td>
               {" "}
               <input id="email" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Lozinka</td>
+            <td>{t("Password")}</td>
             <td>
               {" "}
               <input id="password" type="password"></input>
             </td>
           </tr>
           <tr>
-            <td>Ponovi lozinku</td>
+            <td>{t("Confirm password")}</td>
             <td>
               {" "}
               <input id="confirm-password" type="password"></input>
@@ -83,7 +86,7 @@ const Registration = () => {
           </tr>
           <tr>
             <td colSpan="2">
-              <Button onClick={registerUser}>Register</Button>
+              <Button onClick={registerUser}>{t("Register")}</Button>
             </td>
           </tr>
         </tbody>

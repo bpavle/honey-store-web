@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import styles from "./AddEmployee.module.css";
 import Button from "./Common/Button";
-
+import { useTranslation } from "react-i18next";
 import { addUser, getUsersByRole } from "../api/usersServices";
 import { EmployeesContext } from "./Contexts/EmployeesContext";
 const AddEmployee = () => {
+  const { t, i18n } = useTranslation();
   let [employees, setEmployees] = useContext(EmployeesContext);
   const addEmployee = () => {
     let newEmployee = {
@@ -26,28 +27,28 @@ const AddEmployee = () => {
       <table className={styles.table}>
         <tbody>
           <tr>
-            <td>Ime</td>
+            <td>{t("Name")}</td>
             <td>
               {" "}
               <input id="name" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Prezime</td>
+            <td>{t("Surname")}</td>
             <td>
               {" "}
               <input id="surname" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Kontakt telefon</td>
+            <td>{t("Phone")}</td>
             <td>
               {" "}
               <input id="phone" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Adresa</td>
+            <td>{t("Address")}</td>
             <td>
               {" "}
               <input id="address" type="text"></input>

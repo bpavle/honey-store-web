@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./Contact.module.css";
 import Button from "./Common/Button";
+import { useTranslation } from "react-i18next";
 const mapStyle = {};
 const Contact = () => {
+  const { t, i18n } = useTranslation();
   return (
     <div className={styles.Contact}>
       <div className={styles.left}>
@@ -12,7 +14,7 @@ const Contact = () => {
               <tr>
                 <td>
                   {" "}
-                  <h2>Pisite nam</h2>
+                  <h2>{t("Contact us")}</h2>
                 </td>
               </tr>
               <tr>
@@ -27,7 +29,7 @@ const Contact = () => {
               </tr>
               <tr>
                 <td>
-                  <label htmlFor="textarea">Content</label>
+                  <label htmlFor="textarea">{t("Content")}</label>
                 </td>
               </tr>
               <tr>
@@ -37,7 +39,7 @@ const Contact = () => {
               </tr>
               <tr>
                 <td>
-                  <Button>Posalji</Button>
+                  <Button>{t("Send")}</Button>
                 </td>
               </tr>
             </tbody>
@@ -46,8 +48,9 @@ const Contact = () => {
       </div>
       <div className={styles.right}>
         <p>
-          Контакт Пере Велимировића 8 <br />E пошта: medenjaci@gmail.com <br />
-          тел: 0641234568
+          {t("Contact")} Пере Велимировића 8 <br />
+          {t("Email")}: medenjaci@gmail.com <br />
+          {"тел"}: 0641234568
         </p>
         <div
           className="mapouter"

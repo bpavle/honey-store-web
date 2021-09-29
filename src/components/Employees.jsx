@@ -2,7 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import styles from "./Employees.module.css";
 import { EmployeesContext } from "./Contexts/EmployeesContext";
 import { deleteUser } from "../api/usersServices";
+import { useTranslation } from "react-i18next";
 const Employees = () => {
+  const { t, i18n } = useTranslation();
   let [employees, setEmployees] = useContext(EmployeesContext);
 
   console.log(employees);
@@ -11,12 +13,12 @@ const Employees = () => {
       <table className={styles.table}>
         <tbody>
           <tr>
-            <th>Ime</th>
-            <th>Prezime</th>
-            <th>Telefon</th>
-            <th>Adresa</th>
-            <th>Email</th>
-            <th>Obrisi</th>
+            <th>{t("Name")}</th>
+            <th>{t("Surname")}</th>
+            <th>{t("Phone")}</th>
+            <th>{t("Address")}</th>
+            <th>{t("Email")}</th>
+            <th>{t("Delete")}</th>
           </tr>
           {employees.map((employee) => {
             return (

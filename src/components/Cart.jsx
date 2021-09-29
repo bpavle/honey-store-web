@@ -5,7 +5,9 @@ import { CartContext } from "./Contexts/CartContext";
 import { OrderContext } from "./Contexts/OrderContext";
 import { UserContext } from "./Contexts/UserContext";
 import { createOrder } from "../api/usersServices";
+import { useTranslation } from "react-i18next";
 const Cart = () => {
+  const { t, i18n } = useTranslation();
   const [cart, setCart] = useContext(CartContext);
   let [total, setTotal] = useState(0);
   let [user, setUser] = useContext(UserContext);
@@ -73,7 +75,7 @@ const Cart = () => {
       })}
       <div className={styles.bottom}>
         <div className={styles.line}></div>
-        <p style={{ float: "left" }}>Total =</p>
+        <p style={{ float: "left" }}>{t("Total")} =</p>
         <p
           style={{
             float: "right",
@@ -84,7 +86,7 @@ const Cart = () => {
         >
           {total}
         </p>
-        <Button onClick={order}>Order</Button>
+        <Button onClick={order}>{t("Order")}</Button>
       </div>
     </div>
   );

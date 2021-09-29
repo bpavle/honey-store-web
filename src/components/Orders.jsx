@@ -8,7 +8,10 @@ import icon_filter from "../assets/icon_filter.png";
 import { getOrders, deleteOrder } from "../api/usersServices";
 import OrderDetails from "./OrderDetails";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const Orders = () => {
+  const { t, i18n } = useTranslation();
+
   let [orders, setOrders] = useState(
     getOrders().filter((order) => order.status == "unresolved")
   );
@@ -67,24 +70,24 @@ const Orders = () => {
                 }
               }}
             >
-              <option value="resolved">Resolved</option>
-              <option value="unresolved">Unresolved</option>
-              <option value="all">All</option>
+              <option value="resolved">{t("Resolved")}</option>
+              <option value="unresolved">{t("Unresolved")}</option>
+              <option value="all">{t("All")}</option>
             </select>
           </div>
         )}
         <table className={styles.table}>
           <tbody>
             <tr>
-              <th>ID porudzbine</th>
-              <th>Ime</th>
-              <th>Prezime</th>
-              <th>Telefon</th>
-              <th>Adresa</th>
-              <th>Email</th>
-              <th>Status</th>
-              {filter == "unresolved" && <th>Odobri</th>}
-              {filter == "unresolved" && <th>Odbij</th>}
+              <th>{t("Order ID")}</th>
+              <th>{t("Name")}</th>
+              <th>{t("Surname")}</th>
+              <th>{t("Phone")}</th>
+              <th>{t("Address")}</th>
+              <th>{t("Email")}</th>
+              <th>{t("Status")}</th>
+              {filter == "unresolved" && <th>{t("Approve")}</th>}
+              {filter == "unresolved" && <th>{t("Reject")}</th>}
             </tr>
             {orders.map((order) => {
               return (

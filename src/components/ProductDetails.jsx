@@ -4,7 +4,10 @@ import styles from "./ProductDetails.module.css";
 import Button from "./Common/Button";
 import { CartContext } from "./Contexts/CartContext";
 import { UserContext } from "./Contexts/UserContext";
+import { useTranslation } from "react-i18next";
 const ProductDetails = ({ id, label, image, price, info, func }) => {
+  const { t, i18n } = useTranslation();
+
   let [user, setUser] = useContext(UserContext);
   let [cart, setCart] = useContext(CartContext);
   let [amount, setAmount] = useState(1);
@@ -71,7 +74,7 @@ const ProductDetails = ({ id, label, image, price, info, func }) => {
               </td>
             </tr>
             <tr>
-              <td>Amount</td>
+              <td>{t("Amount")}</td>
               <td>
                 <input
                   type="number"
@@ -82,7 +85,7 @@ const ProductDetails = ({ id, label, image, price, info, func }) => {
               </td>
               <td>= {total}</td>
               <td>
-                <Button onClick={addToCart}>Add to Cart</Button>
+                <Button onClick={addToCart}>{t("Add to Cart")}</Button>
               </td>
             </tr>
           </tbody>

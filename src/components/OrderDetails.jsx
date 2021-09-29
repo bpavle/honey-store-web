@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import styles from "./OrderDetails.module.css";
 import Button from "./Common/Button";
 import { getOrders, deleteOrder } from "../api/usersServices";
+import { useTranslation } from "react-i18next";
 
 const OrderDetails = (props) => {
+  const { t, i18n } = useTranslation();
+
   let [order, setOrder] = useState(
     getOrders().find((o) => o.id === props.orderId)
   );
@@ -31,7 +34,7 @@ const OrderDetails = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Amount</td>
+              <td>{t("Amount")}</td>
               <td>
                 <input
                   type="number"
@@ -41,7 +44,7 @@ const OrderDetails = (props) => {
               </td>
               <td></td>
               <td>
-                <Button onClick={send}>Send</Button>
+                <Button onClick={send}>{t("Send")}</Button>
               </td>
             </tr>
           </tbody>

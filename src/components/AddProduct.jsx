@@ -3,7 +3,9 @@ import styles from "./AddProduct.module.css";
 import Button from "./Common/Button";
 import { ProductsContext } from "./Contexts/ProductsContext";
 import Product from "./Product";
+import { useTranslation } from "react-i18next";
 const AddProduct = () => {
+  const { t, i18n } = useTranslation();
   let [product, setProduct] = useState({});
   const onClickHandler = (e) => {
     e.stopPropagation();
@@ -46,7 +48,7 @@ const AddProduct = () => {
           <tbody>
             <tr>
               <td>
-                <label htmlFor="label">Name</label>
+                <label htmlFor="label">{t("Name")}</label>
               </td>
               <td>
                 <input type="text" id="label" name="label"></input>
@@ -54,7 +56,7 @@ const AddProduct = () => {
             </tr>
             <tr>
               <td>
-                <label htmlFor="info">Description</label>
+                <label htmlFor="info">{t("Description")}</label>
               </td>
               <td>
                 <input type="text" id="info"></input>
@@ -62,7 +64,7 @@ const AddProduct = () => {
             </tr>
             <tr>
               <td>
-                <label htmlFor="price">Price</label>
+                <label htmlFor="price">{t("Price")}</label>
               </td>
               <td>
                 <input type="text" id="price"></input>
@@ -70,7 +72,7 @@ const AddProduct = () => {
             </tr>
             <tr>
               <td colSpan="2">
-                <Button onClick={addProduct}>Create new product</Button>
+                <Button onClick={addProduct}>{t("Create new product")}</Button>
               </td>
             </tr>
           </tbody>

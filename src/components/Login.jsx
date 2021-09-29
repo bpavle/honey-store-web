@@ -4,7 +4,9 @@ import { Link, Redirect, useHistory } from "react-router-dom";
 import Button from "./Common/Button";
 import { loginUser } from "../api/usersServices";
 import { UserContext } from "./Contexts/UserContext";
+import { useTranslation } from "react-i18next";
 const Login = () => {
+  const { t, i18n } = useTranslation();
   let [message, setMessage] = useState();
   let [user, setUser] = useContext(UserContext);
   const history = useHistory();
@@ -29,7 +31,7 @@ const Login = () => {
         <tbody>
           <tr>
             <td>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t("Email")}</label>
             </td>
             <td>
               <input type="text" id="email" />
@@ -37,7 +39,7 @@ const Login = () => {
           </tr>
           <tr>
             <td>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">{t("Password")}</label>
             </td>
             <td>
               <input type="text" id="password" />
@@ -46,12 +48,13 @@ const Login = () => {
           <tr>
             <td colSpan="2" style={{ textAlign: "center" }}>
               {" "}
-              No account? <Link to="Registration">Register here</Link>
+              {t("No account?")}{" "}
+              <Link to="Registration">{t("Register here")}</Link>
             </td>
           </tr>
           <tr>
             <td colSpan="2">
-              <Button onClick={login}>Login</Button>
+              <Button onClick={login}>{t("Login")}</Button>
             </td>
           </tr>
         </tbody>

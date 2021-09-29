@@ -3,7 +3,10 @@ import styles from "./MyProfile.module.css";
 import Button from "./Common/Button";
 import { updateUser, getUserById } from "../api/usersServices";
 import { UserContext } from "./Contexts/UserContext";
+import { useTranslation } from "react-i18next";
 const MyProfile = () => {
+  const { t, i18n } = useTranslation();
+
   let [user, setUser] = useContext(UserContext);
   console.log(user);
   console.log(getUserById(user.id));
@@ -38,14 +41,14 @@ const MyProfile = () => {
       <table className={styles.table}>
         <tbody>
           <tr>
-            <td>Ime</td>
+            <td>{t("Name")}</td>
             <td>
               {" "}
               <input placeholder={user.name} id="name" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Prezime</td>
+            <td>{t("Surname")}</td>
             <td>
               {" "}
               <input
@@ -56,14 +59,14 @@ const MyProfile = () => {
             </td>
           </tr>
           <tr>
-            <td>Kontakt telefon</td>
+            <td>{t("Phone")}</td>
             <td>
               {" "}
               <input placeholder={user.phone} id="phone" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Adresa</td>
+            <td>{t("Address")}</td>
             <td>
               {" "}
               <input
@@ -74,14 +77,14 @@ const MyProfile = () => {
             </td>
           </tr>
           <tr>
-            <td>Email</td>
+            <td>{t("Email")}</td>
             <td>
               {" "}
               <input placeholder={user.email} id="email" type="text"></input>
             </td>
           </tr>
           <tr>
-            <td>Lozinka</td>
+            <td>{t("Password")}</td>
             <td>
               {" "}
               <input
@@ -92,7 +95,7 @@ const MyProfile = () => {
             </td>
           </tr>
           <tr>
-            <td>Ponovi lozinku</td>
+            <td>{t("Confirm password")}</td>
             <td>
               {" "}
               <input id="confirm-password" type="password"></input>
@@ -100,7 +103,7 @@ const MyProfile = () => {
           </tr>
           <tr>
             <td colSpan="2">
-              <Button onClick={changeInfo}>Sacuvaj</Button>
+              <Button onClick={changeInfo}>{t("Save")}</Button>
             </td>
           </tr>
         </tbody>

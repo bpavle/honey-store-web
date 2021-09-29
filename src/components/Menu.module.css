@@ -23,3 +23,11 @@
   float: right;
   text-decoration: none;
 }
+.image_button {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  float: right;
+  text-decoration: none;
+}

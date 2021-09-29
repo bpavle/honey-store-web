@@ -18,6 +18,9 @@ import { ClickProvider } from './components/Contexts/ClickContext'
 //Utils
 import PrivateRoute from './utils/PrivateRoute';
 import MenuItems from './utils/Menu'
+
+import './i18n';
+
 function App() {
   return (
 
