@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "./Contexts/UserContext";
 import styles from "./Menu.module.css";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import flag_rs from "../assets/flag-rs.png";
 import flag_en from "../assets/flag-en.png";
 
@@ -39,10 +39,10 @@ const Menu = ({ MenuItems }) => {
         onClick={() => {
           if (flag == flag_en) {
             setFlag(flag_rs);
-            i18n.changeLanguage("rs");
+            i18n.changeLanguage("en");
           } else {
             setFlag(flag_en);
-            i18n.changeLanguage("en");
+            i18n.changeLanguage("rs");
           }
         }}
       ></img>
